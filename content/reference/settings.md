@@ -13,12 +13,12 @@ borg settings list
 
 | Key | Default | Description |
 |---|---|---|
-| `llm.provider` | auto-detect | `openai` / `anthropic` / `openrouter` / `gemini` / `deepseek` / `groq` / `ollama` / `claude_code` |
+| `llm.provider` | auto-detect | `openai`, `anthropic`, `openrouter`, `gemini`, `deepseek`, `groq`, `ollama`, `claude_code` |
 | `llm.model` | provider default | Model ID |
 | `llm.temperature` | 0.7 | Sampling temperature |
 | `llm.fallback` | `[]` | JSON array of fallback providers |
 | `llm.max_output_tokens` | 4096 | |
-| `llm.thinking` | `"auto"` | Thinking / reasoning mode |
+| `llm.thinking` | `"auto"` | Thinking or reasoning mode |
 
 ## Memory
 
@@ -28,7 +28,7 @@ borg settings list
 | `memory.embeddings.enabled` | `true` | |
 | `memory.embeddings.vector_weight` | 0.7 | |
 | `memory.embeddings.bm25_weight` | 0.3 | |
-| `memory.embeddings.recency_weight` | 0.2 | 0=pure similarity, 1=pure recency |
+| `memory.embeddings.recency_weight` | 0.2 | 0 pure similarity, 1 pure recency |
 | `memory.short_term.max_tokens` | 2000 | |
 
 ## Heartbeat
@@ -37,7 +37,7 @@ borg settings list
 |---|---|
 | `heartbeat.enabled` | `false` |
 | `heartbeat.interval` | `30m` |
-| `heartbeat.cron` | *(unset)* |
+| `heartbeat.cron` | (unset) |
 | `heartbeat.quiet_hours` | `00:00-06:00` |
 
 ## Gateway
@@ -49,7 +49,7 @@ borg settings list
 | `gateway.<channel>.enabled` | `false` per channel |
 | `gateway.dm_policy` | `pairing` |
 
-Bindings and channel policies are JSON:
+Bindings and channel policies store as JSON:
 
 ```sh
 borg settings set gateway.bindings '[{"channel":"slack","model":"claude-opus-4-7"}]'
@@ -75,7 +75,7 @@ borg settings set gateway.bindings '[{"channel":"slack","model":"claude-opus-4-7
 |---|---|
 | `collab.default_mode` | `default` |
 
-## Web / TTS / Image
+## Web, TTS, Image
 
 | Key | Default |
 |---|---|

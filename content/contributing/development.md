@@ -2,11 +2,11 @@
 
 ## Prerequisites
 
-- Rust 1.75+ (`rustup default stable`)
-- macOS or Linux (iMessage requires macOS; everything else is cross-platform)
+- Rust 1.75 or newer (`rustup default stable`)
+- macOS or Linux. iMessage requires macOS. Everything else is cross-platform.
 - `just` (optional, for coverage)
 
-## Build + test
+## Build and test
 
 ```sh
 git clone https://github.com/borganization/borg
@@ -23,7 +23,7 @@ cargo clippy -- -D warnings
 cargo run --bin borg
 ```
 
-Data still lives at `~/.borg/` — dev and release share state unless you override:
+Data still lives at `~/.borg/`. Dev and release share state unless you override:
 
 ```sh
 BORG_HOME=/tmp/borg-dev cargo run
@@ -36,7 +36,7 @@ just coverage         # HTML report at target/coverage/index.html
 just coverage-summary # text summary
 ```
 
-Target: 80%+.
+Target: 80% or higher.
 
 ## Crate layout
 
@@ -46,29 +46,29 @@ Smaller crates (`apply-patch`, `sandbox`, `heartbeat`, `plugins`) enforce `#![wa
 
 ## Adding a new setting
 
-1. `crates/core/src/config/<section>.rs` — add the field + default.
+1. `crates/core/src/config/<section>.rs` — add the field and default.
 2. `crates/core/src/config/settings_table.rs` — add one line to the `define_settings!` macro.
 
-To show in the `/settings` TUI popup, append to `tui_settings { … }`:
+For the `/settings` TUI popup, append to `tui_settings { ... }`:
 
 ```rust
 "my.new.setting" => "Display Label", Bool, "Category";
 ```
 
-`TuiSettingKind`: `Bool` / `Float` / `Uint` / `Select`. A unit test enforces that every `tui_settings` key resolves in `SETTING_REGISTRY`.
+`TuiSettingKind`: `Bool`, `Float`, `Uint`, `Select`. A unit test enforces that every `tui_settings` key resolves in `SETTING_REGISTRY`.
 
 ## Adding a new tool
 
-Prefer extending an existing tool with an `action` parameter. If you must add:
+Extend an existing tool with an `action` parameter first. If you must add a tool:
 
-- Definition: `crates/core/src/tool_definitions.rs`
-- Handler: `crates/core/src/tool_handlers/<name>.rs`
-- Group: `crates/core/src/tool_catalog.rs` (`tool_group()`)
-- Plan mode: add to allowlist in `agent.rs` if read-only (new tools default to blocked)
+- Definition — `crates/core/src/tool_definitions.rs`
+- Handler — `crates/core/src/tool_handlers/<name>.rs`
+- Group — `crates/core/src/tool_catalog.rs` (`tool_group()`)
+- Plan mode — add to the allowlist in `agent.rs` when the tool stays read-only. New tools default to blocked.
 
 ## Adding a skill
 
-`crates/core/skills/<name>/SKILL.md` + `include_str!` in `crates/core/src/skills.rs`.
+`crates/core/skills/<name>/SKILL.md`. Add `include_str!` in `crates/core/src/skills.rs`.
 
 ## Adding a native channel
 
@@ -82,4 +82,4 @@ tail -f ~/.borg/logs/tui.log
 tail -f ~/.borg/logs/daemon.log
 ```
 
-Structured JSON logs are at `~/.borg/logs/{date}.jsonl`.
+Structured JSON logs sit at `~/.borg/logs/{date}.jsonl`.

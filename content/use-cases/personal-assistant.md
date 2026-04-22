@@ -4,10 +4,10 @@ Your Borg on your phone, talking to you where you already are.
 
 ## Setup
 
-1. Pick a channel you'll actually read. iMessage if you're on Apple, Telegram otherwise.
+1. Pick a channel you will read. iMessage on Apple, Telegram otherwise.
    - [channels/imessage](../channels/imessage)
    - [channels/telegram](../channels/telegram)
-2. Point Borg at your calendar + email via skills:
+2. Point Borg at your calendar and email via skills:
    ```sh
    borg credentials set GOOGLE_CALENDAR_TOKEN ...
    borg credentials set GMAIL_TOKEN ...
@@ -17,13 +17,13 @@ Your Borg on your phone, talking to you where you already are.
    borg settings set heartbeat.enabled true
    borg settings set heartbeat.cron "0 8,13,18 * * *"
    ```
-4. Write a `~/.borg/HEARTBEAT.md`:
+4. Write `~/.borg/HEARTBEAT.md`:
    ```markdown
    # Heartbeat
-   At check-in, if anything below is true, message me:
+   At check-in, if any of these apply, message me:
    - a meeting starts in the next 30 minutes
-   - an email from a starred sender is unread > 4 hours
-   - a todo was scheduled for today and not done
+   - an email from a starred sender sits unread > 4 hours
+   - a todo scheduled for today is not done
    Otherwise stay silent.
    ```
 
@@ -31,13 +31,13 @@ Your Borg on your phone, talking to you where you already are.
 
 ```
 You:   remind me to call mom sunday after lunch
-Borg:  Scheduled: "call mom" Sunday 2pm. I'll ping you here.
+Borg:  Scheduled: "call mom" Sunday 2pm. I will ping you here.
 
 You:   what's my week look like?
-Borg:  Mon — 3 meetings. Tue — clear until 3pm. Wed — offsite all day. ...
+Borg:  Mon. 3 meetings. Tue. Clear until 3pm. Wed. Offsite all day. ...
 
 You:   move the wed offsite note to my "family" context
-Borg:  Done. It's now scoped to project:family.
+Borg:  Done. The note is now scoped to project:family.
 ```
 
 ## Memory

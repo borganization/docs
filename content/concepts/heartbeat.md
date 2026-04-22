@@ -1,22 +1,22 @@
 # Heartbeat
 
-Proactive check-ins. Borg wakes itself up on a schedule and decides whether to message you.
+Proactive check-ins. Borg wakes itself on a schedule and decides whether to message you.
 
 ## Defaults
 
-- **Interval:** 30 min (or cron expression)
-- **Quiet hours:** 00:00–06:00 local
-- **Injected file:** `~/.borg/HEARTBEAT.md` (optional checklist)
+- Interval: 30 min (or cron expression).
+- Quiet hours: 00:00 to 06:00 local.
+- Injected file: `~/.borg/HEARTBEAT.md` (optional checklist).
 
 ## What happens
 
-1. Scheduler fires at the interval (outside quiet hours).
+1. The scheduler fires at the interval, outside quiet hours.
 2. Borg runs a heartbeat turn with `HEARTBEAT.md` injected.
-3. Output is filtered:
-   - empty response → suppressed
-   - duplicate of last check-in → suppressed
-   - ack-only ("ok", "noted") → suppressed
-4. Delivered via active channels, honoring gateway bindings.
+3. Borg filters output:
+   - Empty response — suppressed
+   - Duplicate of the last check-in — suppressed
+   - Ack-only response ("ok", "noted") — suppressed
+4. The message delivers via active channels, honoring gateway bindings.
 
 ## Poke
 
@@ -40,10 +40,10 @@ borg settings set heartbeat.interval "30m"
 borg settings set heartbeat.quiet_hours "00:00-06:00"
 ```
 
-Or use a cron string:
+Use a cron string instead:
 
 ```sh
-borg settings set heartbeat.cron "0 9,13,17 * * 1-5"   # 9am/1pm/5pm weekdays
+borg settings set heartbeat.cron "0 9,13,17 * * 1-5"   # 9am, 1pm, 5pm weekdays
 ```
 
 ## HEARTBEAT.md
@@ -57,7 +57,7 @@ When you check in:
 2. Anything due today from the schedule?
 3. Any ignored emails from starred senders?
 
-Only message me if something is actionable. Otherwise stay silent.
+Only message me with something actionable. Otherwise stay silent.
 ```
 
-The agent reads this at every heartbeat turn.
+The agent reads the file on every heartbeat turn.

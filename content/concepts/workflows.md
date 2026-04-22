@@ -1,30 +1,30 @@
 # Workflows
 
-Durable multi-step orchestration. The LLM decomposes a task into ordered steps; each step runs as an isolated agent turn with prior step outputs injected. State persists in SQLite, so workflows survive crashes and restarts.
+Durable multi-step orchestration. The LLM decomposes a task into ordered steps. Each step runs as an isolated agent turn with prior outputs injected. State persists in SQLite. Workflows survive crashes and restarts.
 
 ## Lifecycle
 
-1. User invokes a workflow (via `schedule` tool, cron, or `/schedule`).
-2. Planner LLM emits N steps with explicit dependencies.
-3. Dispatcher runs steps in order; each step is a fresh turn with prior outputs as context.
-4. Step results written to `workflow_steps`.
-5. On completion, final summary returned.
+1. You invoke a workflow via the `schedule` tool, cron, or `/schedule`.
+2. A planner LLM emits N steps with explicit dependencies.
+3. The dispatcher runs steps in order. Each step is a fresh turn with prior outputs as context.
+4. Step results write to `workflow_steps`.
+5. On completion, Borg returns a final summary.
 
-## Why not just loop?
+## Why workflows beat a long single turn
 
-A long single turn hits context limits and has no checkpointing. Workflows get:
+A long single turn hits context limits and has no checkpointing. Workflows deliver:
 
-- **Crash recovery.** Restart Borg; the workflow resumes from the last completed step.
-- **Per-step provider override.** One step on Claude, another on a cheap local model.
-- **Observability.** Every step is a queryable row.
+- Crash recovery — restart Borg and the workflow resumes from the last completed step.
+- Per-step provider override — one step on Claude, another on a cheap local model.
+- Observability — every step is a queryable row.
 
 ## Claude and workflows
 
-All Claude models skip workflows (`workflow.enabled = "auto"`). Claude's native tool-use loop is already durable enough; the extra indirection adds latency without gain.
+All Claude models skip workflows (`workflow.enabled = "auto"`). Claude's native tool-use loop stays durable enough on its own. Extra indirection adds latency with no gain.
 
 ## Key files
 
-- `crates/core/src/workflow/` — planner, dispatcher
+- `crates/core/src/workflow/` — planner and dispatcher
 - `crates/core/src/db/workflow.rs` — SQLite tables
 
 ## See also

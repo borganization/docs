@@ -1,6 +1,6 @@
 # Writing Skills
 
-A skill teaches the agent to use a CLI tool via `run_shell`. It's just a Markdown file with YAML frontmatter.
+A skill teaches the agent to use a CLI tool via `run_shell`. A skill is a Markdown file with YAML frontmatter.
 
 ## Minimum viable skill
 
@@ -36,23 +36,23 @@ linear-cli issues create --team ENG --title "..." --description "..."
 
 ## Frontmatter
 
-| Field | Type | What |
+| Field | Type | Use |
 |---|---|---|
 | `name` | string | Must match directory name |
-| `description` | string | One sentence. Shown to the LLM for skill selection |
-| `requires.bins` | array | All must be on `PATH` for the skill to be "available" |
+| `description` | string | One sentence. Shown to the LLM for skill selection. |
+| `requires.bins` | array | All must sit on `PATH` for the skill to show as available |
 | `requires.env` | array | All must be set (or in `[credentials]`) |
-| `requires.any_bins` | array | At least one must be present (e.g. `chrome` OR `chromium`) |
-| `os` | array | `macos`, `linux` — skill hidden on other OSes |
-| `install` | map | `{tool: {brew: "pkg", apt: "pkg"}}` — the doctor suggests installs |
+| `requires.any_bins` | array | At least one must exist (example: `chrome` or `chromium`) |
+| `os` | array | `macos`, `linux`. The skill hides on other OSes. |
+| `install` | map | `{tool: {brew: "pkg", apt: "pkg"}}`. The doctor suggests installs. |
 
 ## Body
 
 Write for an LLM audience. Be specific:
 
-- Lead with the **when** — when should the agent reach for this?
-- Give concrete examples with literal commands. The agent will adapt them.
-- Document error conditions the agent will actually hit.
+- Lead with the "when". When should the agent reach for this skill?
+- Give concrete examples with literal commands. The agent adapts them.
+- Document error conditions the agent will hit.
 
 ## Overriding a built-in
 
@@ -61,10 +61,10 @@ A user skill named `slack` overrides the compiled-in `slack` skill. Same name, y
 ## Testing
 
 1. Put the file in place.
-2. Run `borg` — at session start, the skill loader picks it up.
-3. `/plugins` → "Skills" shows whether it's available or flagged for missing requirements.
-4. Ask the agent to do the thing — it should use your skill.
+2. Run `borg`. At session start, the skill loader picks up the file.
+3. `/plugins` "Skills" shows whether the skill is available or flagged for missing requirements.
+4. Ask the agent to do the thing. The agent uses your skill.
 
 ## Auditing
 
-V39 tracks SHA-256 of every user `SKILL.md` in the `skill_audit` table. The doctor flags post-install tampering. If you edit the file, the doctor notes it as "modified" on the next daily sweep.
+V39 tracks SHA-256 of every user `SKILL.md` in the `skill_audit` table. The doctor flags post-install tampering. Edit the file and the doctor notes the file as "modified" on the next daily sweep.

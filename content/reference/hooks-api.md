@@ -1,6 +1,6 @@
 # Hooks API
 
-User script hooks live at `~/.borg/hooks.json`. Schema matches Claude Code / codex for portability.
+User script hooks live at `~/.borg/hooks.json`. The schema matches Claude Code and codex for portability.
 
 ## Full schema
 
@@ -9,7 +9,7 @@ User script hooks live at `~/.borg/hooks.json`. Schema matches Claude Code / cod
   "hooks": {
     "<HookPoint>": [
       {
-        "matcher": "regex on tool name (optional, PreToolUse/PostToolUse only)",
+        "matcher": "regex on tool name (optional, PreToolUse and PostToolUse only)",
         "command": "sh command to run",
         "timeout": 60
       }
@@ -31,15 +31,15 @@ User script hooks live at `~/.borg/hooks.json`. Schema matches Claude Code / cod
 
 ## Execution
 
-- `sh -c <command>` with the JSON payload as `$1`.
+- Borg runs `sh -c <command>` with the JSON payload as `$1`.
 - Default timeout 60s. Clamped to `[1, 600]`.
-- STDOUT is ignored (future: structured response parsing).
-- STDERR is logged at `warn` level.
+- STDOUT gets ignored. (Future: structured response parsing.)
+- STDERR logs at `warn` level.
 
 ## Semantics
 
-- `PreToolUse` exit != 0 or timeout → `HookAction::Skip` aborts the tool call.
-- Any other failure (parse error, spawn failure, panic) → logged, `Continue`. **Hooks can never break the agent.**
+- `PreToolUse` exit != 0 or timeout returns `HookAction::Skip`. The tool call aborts.
+- Any other failure (parse error, spawn failure, panic) logs and returns `Continue`. Hooks never break the agent.
 - Gated on `hooks.enabled` (default `true`).
 
 ## Example

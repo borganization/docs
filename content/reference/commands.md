@@ -4,7 +4,7 @@ All slash commands work inside the TUI. Some also exist as CLI subcommands.
 
 ## Core
 
-| Command | What it does |
+| Command | Use |
 |---|---|
 | `/plugins` | Add, remove, manage plugins and channels |
 | `/schedule` | Manage scheduled prompts, scripts, workflows |
@@ -16,28 +16,28 @@ All slash commands work inside the TUI. Some also exist as CLI subcommands.
 
 ## Conversation
 
-| Command | What it does |
+| Command | Use |
 |---|---|
-| `/btw <q>` | Side question using current context, no history impact |
+| `/btw <q>` | Side question using current context. No history impact. |
 | `/poke` | Trigger an immediate [heartbeat](../concepts/heartbeat) |
 | `/usage` | Token and cost usage for this session |
-| `/plan` | Toggle Plan mode (read-only, produces `<proposed_plan>`) |
+| `/plan` | Toggle Plan mode. Read-only, produces `<proposed_plan>`. |
 | `/mode` | Switch collaboration mode |
 | `/clear` | Clear the session |
-| `/undo` | Revert to last [ghost commit](architecture#git-utilities) |
+| `/undo` | Revert to the last [ghost commit](architecture#git-utilities) |
 
 ## Personality
 
-| Command | What it does |
+| Command | Use |
 |---|---|
-| `/evolution` | See how your Borg has evolved over time |
+| `/evolution` | See how your Borg evolved over time |
 | `/xp` | XP summary and recent feed |
-| `/stats` | [Vitals](../concepts/vitals) — stability/focus/sync/growth/happiness |
+| `/stats` | [Vitals](../concepts/vitals): stability, focus, sync, growth, happiness |
 | `/card` | Print a shareable ASCII card of your Borg |
 
 ## Utilities
 
-| Command | What it does |
+| Command | Use |
 |---|---|
 | `/help` | Command reference |
 | `/status` | Same as `/stats` |

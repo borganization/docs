@@ -1,6 +1,6 @@
 # Discord
 
-Native integration. Uses the Discord interactions API (webhook, not gateway websocket).
+Native integration. Uses the Discord interactions API over webhook, not the gateway websocket.
 
 ## Setup
 
@@ -24,8 +24,8 @@ Native integration. Uses the Discord interactions API (webhook, not gateway webs
 
 ## Slash command
 
-Borg registers a `/borg` slash command. Users invoke it in any channel it's been added to.
+Borg registers a `/borg` slash command. Users invoke the command in any channel the bot joined.
 
 ## Threads
 
-Each Discord channel gets its own session (`channel_id` is the thread key).
+Each Discord channel gets a session. `channel_id` is the thread key.

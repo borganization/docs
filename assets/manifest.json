@@ -40,7 +40,7 @@
       },
       {
         "path": "channels/twilio",
-        "title": "Twilio (WhatsApp + SMS)",
+        "title": "Twilio (WhatsApp and SMS)",
         "children": []
       }
     ]

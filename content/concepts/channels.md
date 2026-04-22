@@ -12,7 +12,7 @@ Compiled into the binary. No scripts needed:
 - [Teams](../channels/teams)
 - [Google Chat](../channels/google-chat)
 - [Signal](../channels/signal)
-- [Twilio](../channels/twilio) (WhatsApp + SMS)
+- [Twilio](../channels/twilio) (WhatsApp and SMS)
 - [iMessage](../channels/imessage) (macOS only)
 
 ## Script channels
@@ -61,19 +61,19 @@ memory_scope = "global"
 
 ## Sender pairing
 
-Unknown senders are gated behind approval (`dm_policy`):
+Unknown senders sit behind approval. Policy via `dm_policy`:
 
 | Policy | Behavior |
 |---|---|
-| `pairing` | Unknown senders must request approval; you approve in the TUI |
-| `open` | Anyone can talk to Borg |
-| `disabled` | Only approved senders |
+| `pairing` | Unknown senders request approval. You approve in the TUI. |
+| `open` | Anyone talks to Borg. |
+| `disabled` | Only approved senders. |
 
 Per-channel overrides via `gateway.channel_policies`.
 
 ## Thread-scoped history
 
-DB session key is `{sender_id}:{thread_id}`. Parsers populate `thread_id` from:
+The DB session key is `{sender_id}:{thread_id}`. Parsers populate `thread_id` from:
 
 - Slack: `thread_ts`
 - Teams: `reply_to_id`
@@ -81,4 +81,4 @@ DB session key is `{sender_id}:{thread_id}`. Parsers populate `thread_id` from:
 - Google Chat: `thread.name`
 - Telegram: `message_thread_id`
 
-So a single sender can have multiple parallel conversations with independent history.
+One sender runs multiple parallel conversations with independent history.

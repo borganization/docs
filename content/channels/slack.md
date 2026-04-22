@@ -6,7 +6,7 @@ Native integration. Uses Slack's Events API.
 
 1. Create a Slack app at [api.slack.com/apps](https://api.slack.com/apps).
 2. Add bot scopes: `chat:write`, `app_mentions:read`, `im:history`, `im:write`, `channels:history`.
-3. Install to your workspace; copy the Bot User OAuth Token (`xoxb-…`) and Signing Secret.
+3. Install to your workspace. Copy the Bot User OAuth Token (`xoxb-...`) and Signing Secret.
 
    ```sh
    borg credentials set SLACK_BOT_TOKEN xoxb-...
@@ -34,8 +34,8 @@ memory_scope = "project:work"
 
 ## Threads
 
-Slack threads use `thread_ts`. Replying in a thread keeps a separate session from channel-level DMs.
+Slack threads use `thread_ts`. A thread reply keeps a separate session from the channel-level DM.
 
 ## Verification
 
-Requests are verified with the signing secret. Replay-attack protection rejects stale timestamps.
+Requests verify with the signing secret. Replay-attack protection rejects stale timestamps.

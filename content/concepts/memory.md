@@ -1,6 +1,6 @@
 # Memory
 
-Borg has a two-tier memory system: short-term working memory for the current session, and long-term persistent memory in SQLite.
+Borg runs a two-tier memory system. Short-term working memory for the current session. Long-term persistent memory in SQLite.
 
 ## Architecture
 
@@ -17,16 +17,16 @@ SQLite is the single source of truth for long-term memory. No filesystem memory 
 
 Each turn the agent builds a memory context within a token budget:
 
-1. The `INDEX` entry is always loaded first if it fits.
-2. Remaining entries are ranked by **hybrid search** — 70% vector similarity, 30% BM25, adaptive weighting, with MMR diversity re-ranking.
-3. Entries include until the budget is exhausted.
+1. The `INDEX` entry loads first when room allows.
+2. Remaining entries rank by hybrid search. 70% vector similarity, 30% BM25, adaptive weighting, with MMR diversity re-ranking.
+3. Entries load one by one until the budget runs out.
 4. Rendered as `<long_term_memory trust="stored">` in the stable prefix.
 
 ### Hybrid search
 
-- Embeddings auto-detect from API keys: OpenAI → OpenRouter → Gemini.
-- Falls back to recency-only ranking when no provider is available.
-- Per-term fallback (0.7× discount) when a multi-word phrase has no hits.
+- Embeddings auto-detect from API keys. Order: OpenAI, OpenRouter, Gemini.
+- Falls back to recency-only ranking with no provider available.
+- Per-term fallback applies a 0.7x score discount when a multi-word phrase returns no hits.
 - Embedding cache with 30-day TTL on `last_accessed_at`.
 
 ### Writing
@@ -41,7 +41,7 @@ Each turn the agent builds a memory context within a token budget:
 ```
 
 - `scope`: `"global"` or `"project:{id}"`.
-- Hard cap: 20,000 tokens (rejected). Warns at 8,000.
+- Hard cap: 20,000 tokens. Rejected above. Warns at 8,000.
 - Injection scanner rejects: prompt-override patterns, exfiltration attempts, invisible Unicode (ZWSP, RTL overrides, BOM).
 
 ### Configuration
@@ -58,12 +58,12 @@ borg settings set memory.embeddings.vector_weight 0.7
 
 Accumulates during a session:
 
-- Fact categories: `Decision`, `Preference`, `TaskOutcome`, `CodeFact`, `Correction`.
-- Budget-aware; evicts oldest when token limit hit (default 2000).
-- Tracks active project from the `projects` tool.
-- Omitted entirely when empty (zero token cost).
+- Fact categories — `Decision`, `Preference`, `TaskOutcome`, `CodeFact`, `Correction`
+- Budget-aware — evicts oldest facts when the token limit hits (default 2000)
+- Tracks active project from the `projects` tool
+- Drops out entirely when empty — zero token cost
 
-Never written directly to long-term. On session end, flushes to a daily log entry which nightly consolidation processes.
+Short-term memory never writes directly to long-term storage. On session end, the session flushes to a daily log entry. Nightly consolidation processes the log.
 
 ## Consolidation
 
@@ -71,15 +71,15 @@ Scheduled tasks seeded on first migration to V34:
 
 | When | What |
 |---|---|
-| **Nightly, 3 AM** | Reviews day's sessions. Appends to existing entries, creates new topics, or skips duplicates. |
-| **Weekly, 4 AM Sunday** | Dedupes, merges, tightens entries. Prunes embedding cache (>30d unused). |
+| Nightly, 3 AM | Reviews the day's sessions. Appends to existing entries, creates new topics, or skips duplicates. |
+| Weekly, 4 AM Sunday | Dedupes, merges, tightens entries. Prunes embedding cache (>30 days unused). |
 
 ## Identity
 
-`~/.borg/IDENTITY.md` is the one memory kept as a filesystem file. It's the first part of the system prompt. Both you and the agent can edit it.
+`~/.borg/IDENTITY.md` stays as a filesystem file. Your system prompt starts with the contents. You and the agent both edit the file.
 
 ## Tips
 
-- Keep `INDEX` as a concise index of what Borg knows.
+- Keep `INDEX` as a concise map of what Borg knows.
 - Project-scoped memory isolates per-project context.
 - With embeddings on, semantic relevance beats recency.

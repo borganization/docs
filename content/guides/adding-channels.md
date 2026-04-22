@@ -16,7 +16,7 @@ send.sh           # called to send outbound
 
 ```toml
 [channel]
-runtime = "bash"      # or "python", "node" — anything with a shebang works
+runtime = "bash"      # or "python", "node". Anything with a shebang works.
 poll_interval = 30    # seconds, for receive.sh
 
 [scripts]
@@ -46,11 +46,11 @@ Emit a JSON array on stdout. Each object:
 }
 ```
 
-Borg tracks the last seen timestamp per channel, so you only need to return new messages.
+Borg tracks the last seen timestamp per channel. Return new messages only.
 
 ## send.sh
 
-Reads a JSON object on stdin:
+Read a JSON object on stdin:
 
 ```json
 {
@@ -60,15 +60,15 @@ Reads a JSON object on stdin:
 }
 ```
 
-Exit 0 on success, non-zero on failure. STDERR is logged.
+Exit 0 on success. Non-zero on failure. STDERR logs.
 
 ## Sandboxing
 
-All scripts run under the configured sandbox (Seatbelt on macOS, Bubblewrap on Linux). Blocked paths from `[security]` are always stripped. If your script needs to write somewhere, list it under `allow_fs_write`.
+All scripts run under the configured sandbox. Seatbelt on macOS, Bubblewrap on Linux. Blocked paths from `[security]` always strip. For writes, list the write targets under `allow_fs_write`.
 
 ## Credentials
 
-Env vars listed in `[auth] token_env` are resolved from the `[credentials]` store and injected. Store them with:
+Env vars listed in `[auth] token_env` resolve from the `[credentials]` store and inject. Store them with:
 
 ```sh
 borg credentials set MY_CHANNEL_TOKEN ...
@@ -76,4 +76,4 @@ borg credentials set MY_CHANNEL_TOKEN ...
 
 ## Promoting to native
 
-If your channel gets popular, port it to native: `crates/gateway/src/<name>/` with `types.rs`, `parse.rs`, `api.rs`, `verify.rs`. Register in `server.rs` and `channel_init.rs`.
+If your channel gets popular, port the channel to native: `crates/gateway/src/<name>/` with `types.rs`, `parse.rs`, `api.rs`, `verify.rs`. Register in `server.rs` and `channel_init.rs`.

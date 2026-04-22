@@ -11,7 +11,7 @@ Native integration. Webhook-based.
    borg credentials set TELEGRAM_BOT_TOKEN 123456:ABC-...
    ```
 
-3. Expose the gateway publicly (tunnel or VPS). Set the webhook:
+3. Expose the gateway publicly via a tunnel or VPS. Set the webhook:
 
    ```sh
    curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<your-host>/telegram/webhook"
@@ -39,4 +39,4 @@ memory_scope = "global"
 
 ## Threads
 
-Telegram supergroup topics map to `message_thread_id`. Each topic gets its own session.
+Telegram supergroup topics map to `message_thread_id`. Each topic gets a session.

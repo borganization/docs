@@ -1,16 +1,16 @@
 # Projects
 
-Projects are named contexts. Each project has its own memory scope (`project:{id}`) and can pin a working directory, skills, and gateway bindings.
+Projects are named contexts. Each project owns a memory scope (`project:{id}`). Each project pins a working directory, skills, and gateway bindings.
 
 ## Why
 
-- **Isolated memory.** Work facts for "job" shouldn't pollute context for "personal".
-- **Scoped skills.** Enable 1Password + GitHub for "work" only.
-- **Per-project channels.** A Slack workspace bound to "work", Telegram to "personal".
+- Isolated memory — work facts for "job" stay out of "personal"
+- Scoped skills — enable 1Password and GitHub for "work" only
+- Per-project channels — bind a Slack workspace to "work", Telegram to "personal"
 
 ## Using
 
-Via the `projects` tool (the agent can do this on its own):
+Via the `projects` tool. The agent does this on your behalf:
 
 ```
 > switch to my "work" project
@@ -24,17 +24,17 @@ Or manually:
 
 ## Schema
 
-Stored in `projects` table. Fields: id, name, description, working_dir, archived_at, created_at, updated_at.
+Stored in the `projects` table. Fields: id, name, description, working_dir, archived_at, created_at, updated_at.
 
 ## Memory scoping
 
-When a project is active, `write_memory` defaults to `scope: "project:{id}"`. Long-term memory loading blends:
+With a project active, `write_memory` defaults to `scope: "project:{id}"`. Long-term loading blends:
 
-- `global/*` entries (always eligible)
-- `project:{active}/*` entries (prioritized)
+- `global/*` entries (always eligible).
+- `project:{active}/*` entries (prioritized).
 
-Other projects' scoped entries are not loaded.
+Other projects' scoped entries stay out.
 
 ## Archival
 
-Archiving hides a project from the default list but preserves its memory. Delete is destructive.
+Archiving hides a project from the default list. Memory stays. Delete destroys the project.

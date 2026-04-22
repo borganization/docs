@@ -4,7 +4,7 @@ Native integration. Uses the Bot Framework connector.
 
 ## Setup
 
-1. Register an Azure Bot (or Bot Framework) app. Grab the App ID and Password.
+1. Register an Azure Bot or Bot Framework app. Grab the App ID and Password.
 2. Enable the Teams channel on the bot.
 
    ```sh
@@ -24,4 +24,4 @@ Native integration. Uses the Bot Framework connector.
 
 ## Threads
 
-Replies populate `reply_to_id`, which becomes the session thread key.
+Replies populate `reply_to_id`. The value becomes the session thread key.

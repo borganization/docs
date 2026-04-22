@@ -1,8 +1,8 @@
 # Borg
 
-**Personal AI assistant that runs locally, remembers you, and gets better over time.**
+Personal AI assistant. Runs on your machine. Remembers you. Gets better over time.
 
-Borg is an AI agent written in Rust. It ships as a single binary with all integrations compiled in. The agent itself is the plugin system — it writes its own tools at runtime. Data lives in `~/.borg/`.
+Borg ships as one Rust binary with every integration compiled in. The agent writes its own tools at runtime. Your data lives in `~/.borg/`.
 
 - Source: [github.com/borganization/borg](https://github.com/borganization/borg)
 - License: MIT
@@ -14,27 +14,38 @@ curl -fsSL https://raw.githubusercontent.com/borganization/borg/main/scripts/ins
 borg
 ```
 
-The installer detects your OS, downloads the right binary, and walks you through setup. On first run you pick a provider (OpenAI, Anthropic, OpenRouter, Gemini, DeepSeek, Groq, Ollama, or the Claude Code CLI) and paste a key.
+The installer detects your OS, downloads the right binary, and walks you through setup. On first run you pick a provider and paste a key.
+
+Supported providers:
+
+- OpenAI
+- Anthropic
+- OpenRouter
+- Gemini
+- DeepSeek
+- Groq
+- Ollama (local)
+- Claude Code CLI
 
 ## Where to go next
 
-- [Getting Started](getting-started/) — install, first run, picking a provider
+- [Getting Started](getting-started/) — install, first run, provider setup
 - [Concepts](concepts/) — agent loop, memory, skills, tools, hooks, channels
-- [Use cases](use-cases/) — what people actually use Borg for
+- [Use cases](use-cases/) — what people do with Borg
 - [Reference](reference/) — slash commands, tool catalog, settings, architecture
 - [Guides](guides/) — writing skills, adding channels, scheduling, migrating
 - [Contributing](contributing/) — development setup, testing, roadmap
 
 ## Why Borg
 
-| | Borg | Typical chatbot |
+| Feature | Borg | Typical chatbot |
 |---|---|---|
-| Where it runs | Local binary, your machine | SaaS |
-| Memory | SQLite on disk; survives restarts | Context window |
-| Channels | Telegram, Slack, Discord, iMessage, etc. | Web UI only |
-| Provider | Pick any; swap at runtime | Locked in |
-| Scheduled work | Cron-native; workflows; heartbeat check-ins | None |
-| Extensibility | Writes its own skills and tools | Plugins you install |
+| Runs | Your machine | SaaS |
+| Memory | SQLite on disk, survives restarts | Context window |
+| Channels | Telegram, Slack, Discord, iMessage, and more | Web UI only |
+| Provider | Swap at runtime | Locked in |
+| Scheduled work | Cron, workflows, heartbeat check-ins | None |
+| Extensibility | Writes skills and tools for you | Plugins you install |
 | Data | Yours. One folder. | Theirs |
 
 ## Status

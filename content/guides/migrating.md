@@ -16,23 +16,23 @@ Or via the TUI:
 
 ## What gets imported
 
-| Source | What |
+| Source | Contents |
 |---|---|
-| Claude Code | `~/.claude/` — sessions, CLAUDE.md (per-project), memory, hooks |
+| Claude Code | `~/.claude/` — sessions, CLAUDE.md per project, memory, hooks |
 | Codex | `~/.codex/` — sessions, AGENTS.md, config |
 | ChatGPT export | JSON export from `chat.openai.com/data-export` — conversations |
 
-## How it works
+## How the import works
 
-- Sessions import as rows in `sessions` / `messages` with a `source` tag.
-- Memory / CLAUDE.md / AGENTS.md content becomes `memory_entries` under `global/imported-*`.
-- Hooks from Claude Code's `hooks.json` copy over verbatim — the schema is the same.
+- Sessions import as rows in `sessions` and `messages` with a `source` tag.
+- Memory, CLAUDE.md, and AGENTS.md content becomes `memory_entries` under `global/imported-*`.
+- Hooks from Claude Code's `hooks.json` copy over verbatim. The schema matches.
 
 ## Safety
 
-`migrate` is idempotent per-source. Running it twice doesn't duplicate; it skips anything with a matching external id.
+`migrate` stays idempotent per source. Running twice does not duplicate. Borg skips anything with a matching external id.
 
-Original files are not deleted.
+Original files stay in place. Nothing deletes.
 
 ## After import
 
@@ -40,7 +40,7 @@ Original files are not deleted.
 > /memory
 ```
 
-to see what landed, and
+to see what landed, then:
 
 ```
 > review the imported memory entries and consolidate duplicates

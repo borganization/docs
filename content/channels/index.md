@@ -1,6 +1,6 @@
 # Channels
 
-Native channels are compiled into the binary. Setup is: get API credentials, drop them in `borg credentials`, add a `[[gateway.bindings]]`, done.
+Native channels compile into the binary. Setup: get API credentials, drop them in `borg credentials`, add a `[[gateway.bindings]]`. Done.
 
 - [telegram](telegram)
 - [slack](slack)
@@ -8,14 +8,14 @@ Native channels are compiled into the binary. Setup is: get API credentials, dro
 - [teams](teams)
 - [google-chat](google-chat)
 - [signal](signal)
-- [twilio](twilio) (WhatsApp + SMS)
+- [twilio](twilio) (WhatsApp and SMS)
 - [imessage](imessage) (macOS only)
 
 For anything else, see [guides/adding-channels](../guides/adding-channels) for script channels.
 
 ## The gateway
 
-The gateway is a single HTTP server inside the Borg daemon (`crates/gateway/`). Each channel registers routes and webhook verifiers. Inbound messages parse into a common shape; outbound messages go through a delivery queue with retries.
+The gateway runs as one HTTP server inside the Borg daemon at `crates/gateway/`. Each channel registers routes and webhook verifiers. Inbound messages parse into a common shape. Outbound messages go through a delivery queue with retries.
 
 ## Running
 

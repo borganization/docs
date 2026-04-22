@@ -1,10 +1,10 @@
 # Sandboxing
 
-`run_shell` and script channels execute inside OS-level sandboxes.
+`run_shell` and script channels run inside OS-level sandboxes.
 
-## macOS — Seatbelt
+## macOS: Seatbelt
 
-`sandbox-exec` with a generated `.sb` policy. Deny-all default; the `[sandbox]` section of the per-script/channel config opens specific holes.
+`sandbox-exec` with a generated `.sb` policy. Deny-all default. The `[sandbox]` section per script or channel opens specific holes.
 
 ```toml
 [sandbox]
@@ -13,13 +13,13 @@ allow_fs_read = ["~/Documents/work"]
 allow_fs_write = ["~/Documents/work/out"]
 ```
 
-## Linux — Bubblewrap
+## Linux: Bubblewrap
 
-`bwrap` with user / mount / PID / network namespaces. Same config keys map to `bwrap` args.
+`bwrap` with user, mount, PID, and network namespaces. The same config keys map to `bwrap` args.
 
 ## Blocked paths
 
-Before profile generation, `[security] blocked_paths` are stripped from `fs_read` / `fs_write`. Defaults:
+Before profile generation, `[security] blocked_paths` strip from `fs_read` and `fs_write`. Defaults:
 
 ```
 .ssh
@@ -31,17 +31,17 @@ credentials
 private_key
 ```
 
-`list_dir` also checks each entry against this list.
+`list_dir` rechecks every entry against this list.
 
-## What's *not* sandboxed
+## Not sandboxed
 
 - The `borg` binary itself.
-- Compiled-in tools (`read_file`, `list_dir`, `write_memory`, etc.). These are typed handlers with their own path checks.
+- Compiled-in tools (`read_file`, `list_dir`, `write_memory`, and so on). These are typed handlers with their own path checks.
 
 ## Catastrophic command denylist
 
-Even inside the sandbox, `run_shell` refuses a short list of universally-destructive commands (e.g. `rm -rf /`, `mkfs`, `dd if=…of=/dev/…`, `curl | sh`). These are blocked pre-exec, not by the sandbox.
+Inside the sandbox, `run_shell` still refuses a short list of universally destructive commands: `rm -rf /`, `mkfs`, `dd if=...of=/dev/...`, `curl | sh`. Blocked pre-exec, not by the sandbox.
 
 ## Reference
 
-`crates/sandbox/` is the library. `#![warn(missing_docs)]` is enforced, so every public item has a doc comment.
+`crates/sandbox/` is the library. `#![warn(missing_docs)]` stays enforced. Every public item gets a doc comment.

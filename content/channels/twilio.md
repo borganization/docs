@@ -1,4 +1,4 @@
-# Twilio (WhatsApp + SMS)
+# Twilio (WhatsApp and SMS)
 
 Native integration. One channel, two transports.
 
@@ -13,7 +13,7 @@ Native integration. One channel, two transports.
    borg credentials set TWILIO_AUTH_TOKEN ...
    ```
 
-4. Set the inbound webhook on each number/sender to `https://<your-host>/twilio/sms` (or `/twilio/whatsapp`).
+4. Set the inbound webhook on each number or sender to `https://<your-host>/twilio/sms` or `/twilio/whatsapp`.
 5. Enable:
 
    ```sh
@@ -33,4 +33,4 @@ provider = "anthropic"
 
 ## Verification
 
-Inbound webhooks are verified with Twilio's HMAC signature.
+Inbound webhooks verify with Twilio's HMAC signature.

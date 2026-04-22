@@ -76,5 +76,5 @@ borg:  Kitchen lights on. Running "Good Morning" shortcut.
 
 ## Scoping
 
-- Bind your home channel (iMessage / Telegram from your phone) to `memory_scope = "project:home"`.
+- Bind your home channel (iMessage or Telegram from your phone) to `memory_scope = "project:home"`.
 - Keep home-automation memory separate from work.

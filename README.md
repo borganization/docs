@@ -6,9 +6,9 @@ Live: https://borganization.github.io/docs/
 
 ## Design
 
-Brutalist, filesystem-native, LLM-friendly:
+Brutalist. Filesystem-native. LLM-friendly.
 
-- No frameworks. Vanilla HTML + CSS + JS.
+- No frameworks. Vanilla HTML, CSS, JS.
 - Two-pane layout: file tree left, content right.
 - URLs map 1:1 to files under `content/`.
 - Every page is a standalone `.md`, reachable as raw markdown for copy-paste into LLMs.
@@ -16,10 +16,10 @@ Brutalist, filesystem-native, LLM-friendly:
 ## Layout
 
 ```
-index.html           single shell (also duplicated as 404.html for SPA routing)
+index.html           single shell (duplicated as 404.html for SPA routing)
 assets/
   style.css          brutalist CSS
-  app.js             router + markdown loader
+  app.js             router and markdown loader
   marked.min.js      vendored markdown parser
   manifest.json      generated file tree
 content/             all markdown, structured as the site
@@ -39,8 +39,8 @@ open http://localhost:8000/
 
 ## Deployment
 
-GitHub Pages. Settings → Pages → Source = "GitHub Actions". Push to `main` and the `pages.yml` workflow deploys.
+GitHub Pages. Settings, Pages, Source, "GitHub Actions". Push to `main` and the `pages.yml` workflow deploys.
 
 ## License
 
-MIT — see `LICENSE`.
+MIT. See `LICENSE`.

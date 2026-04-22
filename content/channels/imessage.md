@@ -1,20 +1,20 @@
 # iMessage
 
-**macOS only.** Compiled behind `#[cfg(target_os = "macos")]`.
+macOS only. Compiled behind `#[cfg(target_os = "macos")]`.
 
 ## How it works
 
-Reads and writes iMessage through the local Messages database + AppleScript:
+Reads and writes iMessage through the local Messages database and AppleScript:
 
-- Inbound: polls `~/Library/Messages/chat.db`
-- Outbound: AppleScript bridge (`osascript`)
+- Inbound: polls `~/Library/Messages/chat.db`.
+- Outbound: AppleScript bridge (`osascript`).
 
-No cloud, no phone jailbreak, no separate device. Your Mac must be signed into iMessage.
+No cloud. No phone jailbreak. No separate device. Your Mac must sign into iMessage.
 
 ## Setup
 
-1. Grant Borg **Full Disk Access** in System Settings → Privacy & Security (so it can read `chat.db`).
-2. Grant **Automation** permission for Messages (so AppleScript can send).
+1. Grant Borg Full Disk Access in System Settings, Privacy and Security. Borg needs access to read `chat.db`.
+2. Grant Automation permission for Messages. AppleScript needs the grant to send.
 3. Enable:
 
    ```sh
@@ -22,12 +22,12 @@ No cloud, no phone jailbreak, no separate device. Your Mac must be signed into i
    borg daemon restart
    ```
 
-That's it — no tokens, no webhooks.
+Done. No tokens. No webhooks.
 
 ## Limitations
 
-- Requires the Mac to be powered on and signed in.
-- Reactions and tapbacks are read but not sent.
+- Your Mac must stay powered on and signed in.
+- Reactions and tapbacks read but do not send.
 - No group-chat admin features.
 
 ## Binding

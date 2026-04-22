@@ -1,6 +1,6 @@
 # Tool Catalog
 
-See [concepts/tools](../concepts/tools) for the overview. This page lists every tool with its input shape.
+See [concepts/tools](../concepts/tools) for the overview. This page lists every tool with input shape.
 
 ## `write_memory`
 
@@ -27,7 +27,7 @@ Rejects entries > 20k tokens. Warns at 8k. Injection-scanned.
 { "query": "string", "scope": "optional", "limit": 10 }
 ```
 
-Hybrid vector + BM25. Falls back to per-term matching if no phrase hits.
+Hybrid vector and BM25. Falls back to per-term matching with no phrase hits.
 
 ## `list`
 

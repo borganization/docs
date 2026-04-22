@@ -1,6 +1,6 @@
 # Reference
 
-Exhaustive catalogs. Use as lookup, not tutorial.
+Exhaustive catalogs. Use for lookup, not tutorial.
 
 - [commands](commands) — every slash command
 - [tools](tools) — tool catalog with schemas

@@ -1,10 +1,10 @@
 # Research Assistant
 
-Web browse → summarize → remember. Ask again in a week and it still knows.
+Web browse, summarize, remember. Ask again a week later and Borg still knows.
 
 ## Setup
 
-1. Enable web + browser:
+1. Enable web and browser:
    ```sh
    borg settings set web.enabled true
    borg settings set browser.enabled true
@@ -18,7 +18,7 @@ Web browse → summarize → remember. Ask again in a week and it still knows.
 
 ```
 you:   find the 5 most-cited papers on MMR re-ranking this year
-borg:  (web_search × 3, web_fetch × 5)
+borg:  (web_search x 3, web_fetch x 5)
        Here are 5:
        1. ... (arxiv id, summary)
        2. ...
@@ -27,14 +27,14 @@ borg:  (web_search × 3, web_fetch × 5)
 you:   what did the Chen paper say about diversity?
 borg:  (memory_search finds mmr-2026)
        Chen et al. argue diversity without relevance-preservation
-       degrades NDCG by 6–9% on TREC-DL; their fix is ...
+       degrades NDCG by 6 to 9% on TREC-DL. Their fix is ...
 ```
 
-## Why this works well
+## Why the setup works
 
-- **Hybrid search on memory** surfaces the right saved page even if your wording is different.
-- **Consolidation** collapses near-duplicate saves — you end up with `mmr-2026` as a single synthesized entry, not 8 fragments.
-- **Project scope** keeps unrelated research from polluting the context.
+- Hybrid search on memory surfaces the right saved page even with different query wording.
+- Consolidation collapses near-duplicate saves. You end up with `mmr-2026` as one synthesized entry, not 8 fragments.
+- Project scope keeps unrelated research out of your context.
 
 ## Tip
 
