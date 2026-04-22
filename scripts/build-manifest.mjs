@@ -10,6 +10,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const CONTENT = join(ROOT, "content");
 const OUT = join(ROOT, "assets", "manifest.json");
+const SITEMAP = join(ROOT, "sitemap.xml");
+const SITE_URL = "https://borganization.github.io/docs";
 
 // Preferred display order for top-level sections. Anything not listed falls
 // through to alphabetical after these.
@@ -17,6 +19,7 @@ const TOP_ORDER = [
   "getting-started",
   "concepts",
   "channels",
+  "security",
   "use-cases",
   "guides",
   "reference",
@@ -76,3 +79,30 @@ tree.sort((a, b) => {
 });
 await writeFile(OUT, JSON.stringify(tree, null, 2) + "\n", "utf8");
 console.log(`wrote ${relative(ROOT, OUT)} (${tree.length} top-level entries)`);
+
+// Sitemap
+const urls = [""];
+function collect(nodes) {
+  for (const n of nodes) {
+    if (n.children && n.children.length) {
+      urls.push(n.path + "/");
+      collect(n.children);
+    } else {
+      urls.push(n.path);
+    }
+  }
+}
+collect(tree);
+const today = new Date().toISOString().slice(0, 10);
+const xml =
+  '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  urls
+    .map(
+      (u) =>
+        `  <url><loc>${SITE_URL}/${u}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq></url>`
+    )
+    .join("\n") +
+  "\n</urlset>\n";
+await writeFile(SITEMAP, xml, "utf8");
+console.log(`wrote ${relative(ROOT, SITEMAP)} (${urls.length} urls)`);

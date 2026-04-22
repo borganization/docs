@@ -1,0 +1,74 @@
+# Borg
+
+> Personal AI assistant. Runs on your machine. Remembers you. Gets better over time. Ships as one binary with every integration compiled in. Data lives in `~/.borg/`.
+
+- Source: https://github.com/borganization/borg
+- License: MIT
+- Docs: https://borganization.github.io/docs/
+
+## Getting started
+
+- [Install](https://borganization.github.io/docs/content/getting-started/install.md): One-line curl installer, platform notes.
+- [First run](https://borganization.github.io/docs/content/getting-started/first-run.md): Onboarding, provider keys, personality seed.
+- [Providers](https://borganization.github.io/docs/content/getting-started/providers.md): OpenAI, Anthropic, OpenRouter, Gemini, DeepSeek, Groq, Ollama, Claude Code CLI.
+
+## Concepts
+
+- [Agent loop](https://borganization.github.io/docs/content/concepts/agent-loop.md): Turn structure, system prompt assembly, streaming, crash recovery.
+- [Memory](https://borganization.github.io/docs/content/concepts/memory.md): Long-term and working memory, hybrid vector+BM25 retrieval.
+- [Skills](https://borganization.github.io/docs/content/concepts/skills.md): Progressive-loading markdown capabilities the agent can compose.
+- [Tools](https://borganization.github.io/docs/content/concepts/tools.md): Typed, schema-validated handlers compiled into the binary.
+- [Hooks](https://borganization.github.io/docs/content/concepts/hooks.md): Lifecycle events with Claude Code / codex-compatible user scripts.
+- [Workflows](https://borganization.github.io/docs/content/concepts/workflows.md): Durable multi-step orchestration with per-step provider override.
+- [Heartbeat](https://borganization.github.io/docs/content/concepts/heartbeat.md): Proactive check-ins, quiet hours, dedup.
+- [Self-healing](https://borganization.github.io/docs/content/concepts/self-healing.md): Daily maintenance sweep, stall detection, tamper audit.
+- [Sandboxing](https://borganization.github.io/docs/content/concepts/sandboxing.md): macOS Seatbelt and Linux Bubblewrap for `run_shell` and script channels.
+- [Collaboration modes](https://borganization.github.io/docs/content/concepts/collaboration-modes.md): Default, Execute, Plan.
+- [Projects](https://borganization.github.io/docs/content/concepts/projects.md): Per-project memory and context scoping.
+- [Vitals](https://borganization.github.io/docs/content/concepts/vitals.md): Five-stat agent health model.
+- [Prompt injection defense](https://borganization.github.io/docs/content/concepts/prompt-injection-defense.md): Trust tiers and mitigations.
+- [Channels](https://borganization.github.io/docs/content/concepts/channels.md): Overview of native and script channels.
+
+## Channels
+
+- [Telegram](https://borganization.github.io/docs/content/channels/telegram.md)
+- [Slack](https://borganization.github.io/docs/content/channels/slack.md)
+- [Discord](https://borganization.github.io/docs/content/channels/discord.md)
+- [Microsoft Teams](https://borganization.github.io/docs/content/channels/teams.md)
+- [Google Chat](https://borganization.github.io/docs/content/channels/google-chat.md)
+- [Signal](https://borganization.github.io/docs/content/channels/signal.md)
+- [Twilio (WhatsApp, SMS)](https://borganization.github.io/docs/content/channels/twilio.md)
+- [iMessage (macOS only)](https://borganization.github.io/docs/content/channels/imessage.md)
+
+## Guides
+
+- [Writing skills](https://borganization.github.io/docs/content/guides/writing-skills.md)
+- [Adding channels](https://borganization.github.io/docs/content/guides/adding-channels.md): Script channels via `channel.toml`.
+- [Scheduling](https://borganization.github.io/docs/content/guides/scheduling.md): Cron tasks, prompt tasks, workflows.
+- [Migrating](https://borganization.github.io/docs/content/guides/migrating.md)
+
+## Reference
+
+- [Commands](https://borganization.github.io/docs/content/reference/commands.md): Slash commands and CLI flags.
+- [Tools](https://borganization.github.io/docs/content/reference/tools.md): Full tool catalog with schemas.
+- [Settings](https://borganization.github.io/docs/content/reference/settings.md): SQLite-backed settings keys.
+- [Hooks API](https://borganization.github.io/docs/content/reference/hooks-api.md): User-script hook JSON schema.
+- [Patch DSL](https://borganization.github.io/docs/content/reference/patch-dsl.md): `apply_patch` grammar.
+- [Architecture](https://borganization.github.io/docs/content/reference/architecture.md): Workspace layout and invariants.
+
+## Use cases
+
+- [Developer copilot](https://borganization.github.io/docs/content/use-cases/developer-copilot.md)
+- [Personal assistant](https://borganization.github.io/docs/content/use-cases/personal-assistant.md)
+- [Research assistant](https://borganization.github.io/docs/content/use-cases/research-assistant.md)
+- [Ops bot](https://borganization.github.io/docs/content/use-cases/ops-bot.md)
+- [Home automation](https://borganization.github.io/docs/content/use-cases/home-automation.md)
+- [Cross-device notes](https://borganization.github.io/docs/content/use-cases/cross-device-notes.md)
+
+## Optional
+
+- [Contributing](https://borganization.github.io/docs/content/contributing/index.md)
+- [Development setup](https://borganization.github.io/docs/content/contributing/development.md)
+- [Testing](https://borganization.github.io/docs/content/contributing/testing.md)
+- [Style](https://borganization.github.io/docs/content/contributing/style.md)
+- [Roadmap](https://borganization.github.io/docs/content/contributing/roadmap.md)
