@@ -1,0 +1,269 @@
+[
+  {
+    "path": "channels",
+    "title": "Channels",
+    "children": [
+      {
+        "path": "channels/discord",
+        "title": "Discord",
+        "children": []
+      },
+      {
+        "path": "channels/google-chat",
+        "title": "Google Chat",
+        "children": []
+      },
+      {
+        "path": "channels/imessage",
+        "title": "iMessage",
+        "children": []
+      },
+      {
+        "path": "channels/signal",
+        "title": "Signal",
+        "children": []
+      },
+      {
+        "path": "channels/slack",
+        "title": "Slack",
+        "children": []
+      },
+      {
+        "path": "channels/teams",
+        "title": "Microsoft Teams",
+        "children": []
+      },
+      {
+        "path": "channels/telegram",
+        "title": "Telegram",
+        "children": []
+      },
+      {
+        "path": "channels/twilio",
+        "title": "Twilio (WhatsApp + SMS)",
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": "concepts",
+    "title": "Concepts",
+    "children": [
+      {
+        "path": "concepts/agent-loop",
+        "title": "Agent Loop",
+        "children": []
+      },
+      {
+        "path": "concepts/channels",
+        "title": "Channels",
+        "children": []
+      },
+      {
+        "path": "concepts/collaboration-modes",
+        "title": "Collaboration Modes",
+        "children": []
+      },
+      {
+        "path": "concepts/heartbeat",
+        "title": "Heartbeat",
+        "children": []
+      },
+      {
+        "path": "concepts/hooks",
+        "title": "Hooks",
+        "children": []
+      },
+      {
+        "path": "concepts/memory",
+        "title": "Memory",
+        "children": []
+      },
+      {
+        "path": "concepts/projects",
+        "title": "Projects",
+        "children": []
+      },
+      {
+        "path": "concepts/prompt-injection-defense",
+        "title": "Prompt Injection Defense",
+        "children": []
+      },
+      {
+        "path": "concepts/sandboxing",
+        "title": "Sandboxing",
+        "children": []
+      },
+      {
+        "path": "concepts/self-healing",
+        "title": "Self-Healing",
+        "children": []
+      },
+      {
+        "path": "concepts/skills",
+        "title": "Skills",
+        "children": []
+      },
+      {
+        "path": "concepts/tools",
+        "title": "Tools",
+        "children": []
+      },
+      {
+        "path": "concepts/vitals",
+        "title": "Vitals",
+        "children": []
+      },
+      {
+        "path": "concepts/workflows",
+        "title": "Workflows",
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": "contributing",
+    "title": "Contributing",
+    "children": [
+      {
+        "path": "contributing/development",
+        "title": "Development",
+        "children": []
+      },
+      {
+        "path": "contributing/roadmap",
+        "title": "Roadmap",
+        "children": []
+      },
+      {
+        "path": "contributing/style",
+        "title": "Code Style",
+        "children": []
+      },
+      {
+        "path": "contributing/testing",
+        "title": "Testing",
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": "getting-started",
+    "title": "Getting Started",
+    "children": [
+      {
+        "path": "getting-started/first-run",
+        "title": "First Run",
+        "children": []
+      },
+      {
+        "path": "getting-started/install",
+        "title": "Install",
+        "children": []
+      },
+      {
+        "path": "getting-started/providers",
+        "title": "Providers",
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": "guides",
+    "title": "Guides",
+    "children": [
+      {
+        "path": "guides/adding-channels",
+        "title": "Adding Channels",
+        "children": []
+      },
+      {
+        "path": "guides/migrating",
+        "title": "Migrating",
+        "children": []
+      },
+      {
+        "path": "guides/scheduling",
+        "title": "Scheduling",
+        "children": []
+      },
+      {
+        "path": "guides/writing-skills",
+        "title": "Writing Skills",
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": "reference",
+    "title": "Reference",
+    "children": [
+      {
+        "path": "reference/architecture",
+        "title": "Architecture",
+        "children": []
+      },
+      {
+        "path": "reference/commands",
+        "title": "Slash Commands",
+        "children": []
+      },
+      {
+        "path": "reference/hooks-api",
+        "title": "Hooks API",
+        "children": []
+      },
+      {
+        "path": "reference/patch-dsl",
+        "title": "Patch DSL",
+        "children": []
+      },
+      {
+        "path": "reference/settings",
+        "title": "Settings",
+        "children": []
+      },
+      {
+        "path": "reference/tools",
+        "title": "Tool Catalog",
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": "use-cases",
+    "title": "Use Cases",
+    "children": [
+      {
+        "path": "use-cases/cross-device-notes",
+        "title": "Cross-Device Notes",
+        "children": []
+      },
+      {
+        "path": "use-cases/developer-copilot",
+        "title": "Developer Copilot",
+        "children": []
+      },
+      {
+        "path": "use-cases/home-automation",
+        "title": "Home Automation",
+        "children": []
+      },
+      {
+        "path": "use-cases/ops-bot",
+        "title": "Ops Bot",
+        "children": []
+      },
+      {
+        "path": "use-cases/personal-assistant",
+        "title": "Personal Assistant",
+        "children": []
+      },
+      {
+        "path": "use-cases/research-assistant",
+        "title": "Research Assistant",
+        "children": []
+      }
+    ]
+  }
+]
