@@ -15,20 +15,21 @@ Borg stays provider-agnostic. Pick any backend. Swap at runtime with `/model`.
 
 ## Setting a provider
 
-Export the env var before `borg`, or configure at runtime:
+Switch the active model with `/model`, then open `/settings` to set the provider and drop the API key:
 
-```sh
-borg settings set llm.provider openai
-borg settings set llm.model gpt-5
-borg credentials set OPENAI_API_KEY sk-...
 ```
+/model gpt-5
+/settings
+```
+
+In `/settings`, set `llm.provider` to `openai` and add `OPENAI_API_KEY` under credentials.
 
 ## Fallback chains
 
-Define a fallback chain so an outage will not kill your session:
+Define a fallback chain in `/settings` so an outage will not kill your session. Set `llm.fallback`:
 
-```sh
-borg settings set llm.fallback '["openai","anthropic","openrouter"]'
+```json
+["openai","anthropic","openrouter"]
 ```
 
 When the primary errors, Borg retries down the chain.

@@ -2,17 +2,11 @@
 
 Import history, settings, and memory from other agents.
 
-```sh
-borg migrate --from claude-code
-borg migrate --from codex
-borg migrate --from chatgpt --export path/to/conversations.json
-```
+Open `/migrate` and pick the source:
 
-Or via the TUI:
-
-```
-/migrate
-```
+- Claude Code
+- Codex
+- ChatGPT (JSON export)
 
 ## What gets imported
 

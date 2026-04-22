@@ -1,6 +1,6 @@
 # Channels
 
-Channels are the ways you talk to Borg outside the TUI.
+Channels are the ways you talk to Borg from messaging apps.
 
 ## Native integrations
 
@@ -35,17 +35,17 @@ allow_fs_read = ["~/my-data"]
 token_env = "MY_CHANNEL_TOKEN"
 ```
 
-See [guides/adding-channels](../guides/adding-channels).
+See [guides/adding-custom-channels](../guides/adding-custom-channels).
 
 ## Gateway bindings
 
-Bindings route per-channel or per-sender LLM overrides (provider, model, memory scope, identity, temperature). Manage them via `borg settings`:
+Bindings route per-channel or per-sender LLM overrides (provider, model, memory scope, identity, temperature). Set `gateway.bindings` in `/settings`:
 
-```sh
-borg settings set gateway.bindings '[
+```json
+[
   {"channel":"slack","workspace":"acme","provider":"anthropic","model":"claude-opus-4-7","memory_scope":"project:work","identity":"professional","temperature":0.3},
   {"channel":"telegram","sender":"123456789","provider":"openai","model":"gpt-5","memory_scope":"global"}
-]'
+]
 ```
 
 See [reference/settings](../reference/settings).
@@ -54,11 +54,11 @@ See [reference/settings](../reference/settings).
 
 Unknown senders sit behind approval. Policy via `dm_policy`:
 
-| Policy | Behavior |
-|---|---|
-| `pairing` | Unknown senders request approval. You approve in the TUI. |
-| `open` | Anyone talks to Borg. |
-| `disabled` | Only approved senders. |
+| Policy     | Behavior                                                  |
+| ---------- | --------------------------------------------------------- |
+| `pairing`  | Unknown senders request approval. You approve through `/settings`. |
+| `open`     | Anyone talks to Borg.                                     |
+| `disabled` | Only approved senders.                                    |
 
 Per-channel overrides via `gateway.channel_policies`.
 

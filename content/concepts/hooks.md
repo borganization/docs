@@ -1,6 +1,6 @@
 # Hooks
 
-Borg exposes lifecycle events through one `Hook` trait with 9 hook points. Two layers consume hooks: compiled-in Rust hooks and user script hooks (Claude Code and codex schema).
+Borg exposes 9 lifecycle hook points. Two layers consume them: compiled-in hooks and user script hooks (Claude Code and codex schema).
 
 ## Hook points
 
@@ -17,8 +17,6 @@ Borg exposes lifecycle events through one `Hook` trait with 9 hook points. Two l
 | `Heartbeat` | Proactive check-in fires |
 
 ## Compiled-in hooks
-
-Registered in `crates/cli/src/repl.rs` and `crates/cli/src/tui/mod.rs`:
 
 - `VitalsHook` — updates 5-stat health (stability, focus, sync, growth, happiness)
 - `ActivityHook` — writes `activity_log` rows

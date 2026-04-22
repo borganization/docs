@@ -1,6 +1,6 @@
 # Self-Healing
 
-A daily maintenance task keeps the system healthy with no human intervention. No LLM call. Pure Rust. Runs with no provider configured.
+A daily maintenance task keeps the system healthy with no human intervention. It runs as native code with no LLM call and works even when no provider is configured.
 
 ## Daily sweep (02:00 local)
 
@@ -10,7 +10,7 @@ A daily maintenance task keeps the system healthy with no human intervention. No
 - Runs the headless doctor.
 - Surfaces warnings persisting across two consecutive runs.
 
-Seeded in V37. `task_type = 'maintenance'`. The dispatcher calls `borg_core::maintenance::run_daily_maintenance` directly.
+`task_type = 'maintenance'`. The dispatcher runs daily maintenance directly, no LLM call.
 
 ## Stall detection
 
@@ -22,8 +22,8 @@ The daemon scans every 5 minutes for scheduled tasks whose `next_run` drifted mo
 
 ## Skill tamper detection
 
-V39 added a `skill_audit` table. SHA-256 hashes track every user `SKILL.md`. The doctor's Skills check flags post-install tampering.
+A `skill_audit` table tracks SHA-256 hashes for every user `SKILL.md`. The doctor's Skills check flags post-install tampering.
 
 ## Warning surfacing
 
-On TUI open, `App::new` reads the latest `doctor_runs` row. Any `persistent_warnings` surface as a one-shot `System` cell after the opening card. Not a pinned banner by design. Noise shows once, not forever.
+At session start, Borg reads the latest `doctor_runs` row. Any `persistent_warnings` surface as a one-shot system message after the opening card. Not a pinned banner by design. Noise shows once, not forever.

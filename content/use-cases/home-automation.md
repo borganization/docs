@@ -4,11 +4,7 @@ Shell out to Home Assistant, HomeKit via `shortcuts`, or any HTTP API.
 
 ## Setup (Home Assistant)
 
-1. Store your HA long-lived token:
-   ```sh
-   borg credentials set HA_TOKEN eyJ...
-   borg credentials set HA_URL "http://homeassistant.local:8123"
-   ```
+1. Store your HA long-lived token in `/settings` under credentials as `HA_TOKEN` and `HA_URL` (e.g. `http://homeassistant.local:8123`).
 2. Write a `home` skill at `~/.borg/skills/home/SKILL.md`:
 
 ```markdown

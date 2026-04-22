@@ -4,15 +4,14 @@ How Borg is put together. Read in order if you are new.
 
 - [agent-loop](agent-loop) — how a turn works
 - [memory](memory) — two-tier memory, consolidation, embeddings
-- [skills](skills) — instruction bundles for CLI tools
-- [tools](tools) — built-in tool catalog
+- [plugins](plugins) — built-in natives and third-party skills
 - [hooks](hooks) — lifecycle events, compiled and user-script
 - [collaboration-modes](collaboration-modes) — default, execute, plan
 - [workflows](workflows) — durable multi-step orchestration
 - [heartbeat](heartbeat) — proactive check-ins
-- [vitals](vitals) — agent health stats
+- [borganism](borganism) — vitals, bond, evolution, personality
 - [self-healing](self-healing) — daily maintenance
 - [projects](projects) — project-scoped context
 - [channels](channels) — native integrations (Telegram, Slack, and more)
-- [sandboxing](sandboxing) — macOS Seatbelt and Linux Bubblewrap
-- [prompt-injection-defense](prompt-injection-defense) — five layers of hardening
+
+Security topics (sandboxing, prompt injection defense, credentials, `borg doctor`) live under [security](../security).

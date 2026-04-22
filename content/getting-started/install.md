@@ -25,16 +25,7 @@ borg
 
 ## Build from source
 
-Requires Rust 1.75 or newer.
-
-```sh
-git clone https://github.com/borganization/borg
-cd borg
-cargo build --release
-./target/release/borg
-```
-
-See [contributing/development](../contributing/development) for the full dev setup.
+See [contributing/development](../contributing/development) for toolchain requirements and the full dev setup.
 
 ## Data directory
 
@@ -47,10 +38,10 @@ Everything lives under `~/.borg/`:
   HEARTBEAT.md       Optional heartbeat checklist
   skills/            User skills (override built-ins)
   channels/          User script-based channels
-  logs/              tui.log, daemon.log, {date}.jsonl
+  logs/              session, daemon, and structured JSON logs
 ```
 
-No `config.toml`. All settings live in `borg.db`. Use `borg settings ...` or the `/settings` popup in the TUI.
+No `config.toml`. All settings live in `borg.db`. Open `/settings` to change any value.
 
 ## Uninstall
 

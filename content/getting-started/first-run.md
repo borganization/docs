@@ -16,7 +16,7 @@ Your first `borg` command starts an onboarding flow. You pick:
 
 3. Time zone and quiet hours. Used by the [heartbeat](../concepts/heartbeat) scheduler.
 
-After onboarding you land in the TUI:
+After onboarding Borg drops you into a prompt:
 
 ```
 ~ borg
@@ -26,8 +26,8 @@ After onboarding you land in the TUI:
 
 ## What just happened
 
-- `~/.borg/borg.db` was created. V1 through V39 migrations ran.
-- Default [skills](../concepts/skills) registered.
+- `~/.borg/borg.db` was created. Migrations ran.
+- Default [plugins](../concepts/plugins) registered.
 - Two recurring tasks scheduled: nightly memory consolidation (3 AM) and weekly memory review (4 AM Sunday).
 - A daily self-healing sweep scheduled for 02:00.
 
@@ -47,7 +47,7 @@ With the `weather` skill available and `curl` installed, you get a live answer. 
 | `/model` | Switch provider or model |
 | `/memory` | Inspect what Borg remembers |
 | `/plugins` | Manage plugins and channels |
-| `/stats` | Vitals: stability, focus, sync, growth, happiness |
+| `/stats` | [Vitals](../borganism/vitals): stability, focus, sync, growth, happiness |
 | `/help` | All commands |
 
 See [reference/commands](../reference/commands) for the full list.

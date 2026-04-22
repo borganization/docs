@@ -1,4 +1,4 @@
-# Adding Channels
+# Adding Custom Channels
 
 For anything not already native ([Telegram, Slack, Discord, Teams, Google Chat, Signal, Twilio, iMessage](../channels/)), write a script channel.
 
@@ -68,12 +68,8 @@ All scripts run under the configured sandbox. Seatbelt on macOS, Bubblewrap on L
 
 ## Credentials
 
-Env vars listed in `[auth] token_env` resolve from the `[credentials]` store and inject. Store them with:
-
-```sh
-borg credentials set MY_CHANNEL_TOKEN ...
-```
+Env vars listed in `[auth] token_env` resolve from the credentials store and inject. Store them in `/settings` under credentials (e.g. `MY_CHANNEL_TOKEN`).
 
 ## Promoting to native
 
-If your channel gets popular, port the channel to native: `crates/gateway/src/<name>/` with `types.rs`, `parse.rs`, `api.rs`, `verify.rs`. Register in `server.rs` and `channel_init.rs`.
+If your channel gets popular, port it to a native gateway integration so it compiles into the binary alongside the built-in channels.

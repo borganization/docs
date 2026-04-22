@@ -43,7 +43,3 @@ Omitting the prefix is the most common mistake.
 - Paths resolve against the target root. `..` escapes reject.
 - `Delete File` requires the file to exist. Fails loud, no no-op.
 - `Add File` fails when the file exists.
-
-## Reference impl
-
-`crates/apply-patch/`. Parser and applicator. Library-only. Enforces `#![warn(missing_docs)]`.

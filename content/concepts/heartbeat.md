@@ -22,28 +22,24 @@ Proactive check-ins. Borg wakes itself on a schedule and decides whether to mess
 
 Force an immediate heartbeat:
 
-```sh
-borg poke
-```
-
-Or in the TUI:
-
 ```
 /poke
 ```
 
 ## Configuration
 
-```sh
-borg settings set heartbeat.enabled true
-borg settings set heartbeat.interval "30m"
-borg settings set heartbeat.quiet_hours "00:00-06:00"
+Set these in `/settings`:
+
+| Key | Value |
+|---|---|
+| `heartbeat.enabled` | `true` |
+| `heartbeat.interval` | `30m` |
+| `heartbeat.quiet_hours` | `00:00-06:00` |
+
+Use a cron string instead of an interval by setting `heartbeat.cron`:
+
 ```
-
-Use a cron string instead:
-
-```sh
-borg settings set heartbeat.cron "0 9,13,17 * * 1-5"   # 9am, 1pm, 5pm weekdays
+0 9,13,17 * * 1-5    # 9am, 1pm, 5pm weekdays
 ```
 
 ## HEARTBEAT.md

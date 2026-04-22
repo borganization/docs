@@ -49,13 +49,13 @@ Smaller crates (`apply-patch`, `sandbox`, `heartbeat`, `plugins`) enforce `#![wa
 1. `crates/core/src/config/<section>.rs` — add the field and default.
 2. `crates/core/src/config/settings_table.rs` — add one line to the `define_settings!` macro.
 
-For the `/settings` TUI popup, append to `tui_settings { ... }`:
+To expose the setting in the `/settings` popup, append to the `tui_settings { ... }` block:
 
 ```rust
 "my.new.setting" => "Display Label", Bool, "Category";
 ```
 
-`TuiSettingKind`: `Bool`, `Float`, `Uint`, `Select`. A unit test enforces that every `tui_settings` key resolves in `SETTING_REGISTRY`.
+Kinds: `Bool`, `Float`, `Uint`, `Select`. A unit test enforces that every entry resolves in `SETTING_REGISTRY`.
 
 ## Adding a new tool
 
@@ -78,7 +78,7 @@ Directory: `crates/gateway/src/<name>/`. Modules: `types.rs`, `parse.rs`, `api.r
 
 ```sh
 RUST_LOG=debug cargo run
-tail -f ~/.borg/logs/tui.log
+tail -f ~/.borg/logs/session.log
 tail -f ~/.borg/logs/daemon.log
 ```
 

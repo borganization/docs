@@ -18,12 +18,6 @@ Event-sourced agent health. Five stats, computed by replaying HMAC-verified even
 
 ## Viewing
 
-```sh
-borg status
-```
-
-In the TUI:
-
 ```
 /status
 ```

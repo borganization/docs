@@ -1,6 +1,6 @@
 # Slash Commands
 
-All slash commands work inside the TUI. Some also exist as CLI subcommands.
+Slash commands drive everything: settings, models, scheduling, status, memory, plugins.
 
 ## Core
 
@@ -32,7 +32,7 @@ All slash commands work inside the TUI. Some also exist as CLI subcommands.
 |---|---|
 | `/evolution` | See how your Borg evolved over time |
 | `/xp` | XP summary and recent feed |
-| `/stats` | [Vitals](../concepts/vitals): stability, focus, sync, growth, happiness |
+| `/stats` | [Vitals](../borganism/vitals): stability, focus, sync, growth, happiness |
 | `/card` | Print a shareable ASCII card of your Borg |
 
 ## Utilities
@@ -44,6 +44,8 @@ All slash commands work inside the TUI. Some also exist as CLI subcommands.
 | `/quit` | Exit |
 
 ## CLI equivalents
+
+Run `borg help` for the full CLI reference. Common equivalents:
 
 ```sh
 borg poke              # /poke

@@ -2,7 +2,7 @@
 
 Personal AI assistant. Runs on your machine. Remembers you. Gets better over time.
 
-Borg ships as one Rust binary with every integration compiled in. The agent writes its own tools at runtime. Your data lives in `~/.borg/`.
+Borg ships as one binary with every integration compiled in. The agent writes its own tools at runtime. Your data lives in `~/.borg/`.
 
 - Source: [github.com/borganization/borg](https://github.com/borganization/borg)
 - License: MIT
@@ -30,7 +30,7 @@ Supported providers:
 ## Where to go next
 
 - [Getting Started](getting-started/) — install, first run, provider setup
-- [Concepts](concepts/) — agent loop, memory, skills, tools, hooks, channels
+- [Concepts](concepts/) — agent loop, memory, plugins, hooks, channels
 - [Use cases](use-cases/) — what people do with Borg
 - [Reference](reference/) — slash commands, tool catalog, settings, architecture
 - [Guides](guides/) — writing skills, adding channels, scheduling, migrating
@@ -45,7 +45,7 @@ Supported providers:
 | Channels | Telegram, Slack, Discord, iMessage, and more | Web UI only |
 | Provider | Swap at runtime | Locked in |
 | Scheduled work | Cron, workflows, heartbeat check-ins | None |
-| Extensibility | Writes skills and tools for you | Plugins you install |
+| Extensibility | Writes plugins for you | Plugins you install |
 | Data | Yours. One folder. | Theirs |
 
 ## Status

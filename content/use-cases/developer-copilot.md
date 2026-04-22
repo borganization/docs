@@ -20,7 +20,7 @@ Enable Plan mode for anything risky:
 ## Daily flow
 
 ```
-> /plan fix the failing test in crates/core/src/agent.rs
+> /plan fix the failing test in src/auth/session.ts
 (agent produces <proposed_plan>)
 > proceed
 (agent executes. Edits. Runs tests. Commits with your approval.)

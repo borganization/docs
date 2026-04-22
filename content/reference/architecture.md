@@ -1,37 +1,24 @@
 # Architecture
 
-Cargo workspace with 7 crates.
+Borg ships as one binary. The process splits cleanly into a few subsystems.
 
-| Crate | Purpose |
+| Subsystem | Purpose |
 |---|---|
-| `cli` | Binary. REPL, TUI, clap commands, onboarding, heartbeat display |
-| `core` | Library. Agent loop, multi-provider LLM, memory, identity, config, tools, skills, workflows |
-| `heartbeat` | Library. Proactive scheduler with quiet hours and dedup |
-| `sandbox` | Library. macOS Seatbelt and Linux Bubblewrap policies |
-| `apply-patch` | Library. Patch DSL parser and filesystem applicator |
-| `gateway` | Library. Webhook gateway, native channel integrations |
-| `plugins` | Library. Marketplace catalog and plugin installer |
+| CLI | Interactive session, subcommands, onboarding, heartbeat display |
+| Core | Agent loop, multi-provider LLM, memory, identity, config, tools, skills, workflows |
+| Heartbeat | Proactive scheduler with quiet hours and dedup |
+| Sandbox | macOS Seatbelt and Linux Bubblewrap policies |
+| Apply-patch | Patch DSL parser and filesystem applicator |
+| Gateway | Webhook gateway and native channel integrations |
+| Plugins | Marketplace catalog and plugin installer |
 
-## Build
-
-```sh
-cargo build
-cargo test
-cargo fmt --check
-cargo clippy -- -D warnings
-```
-
-Smaller crates (`apply-patch`, `sandbox`, `heartbeat`, `plugins`) enforce `#![warn(missing_docs)]`. Every public item gets a `///` doc comment.
-
-All integrations compile unconditionally. `iMessage` stays macOS-only via `#[cfg(target_os = "macos")]`.
+All integrations compile unconditionally. iMessage stays macOS-only behind a platform guard.
 
 ## Critical invariants
 
-Sourced from `CLAUDE.md` in the main repo.
-
 ### No silent error swallowing
 
-`let _ = ...` and `.ok()` stay banned on operations of any consequence. Every error logs and either propagates, or logs and continues in fire-and-forget contexts. When an operation reports success to you, the operation must succeed.
+Ignoring errors is banned on operations of any consequence. Every error logs and either propagates, or logs and continues in fire-and-forget contexts. When an operation reports success to you, the operation must succeed.
 
 ### No approval prompts
 
@@ -39,7 +26,7 @@ Per-tool-call confirmation dialogs are removed as a design decision. Shell comma
 
 ### Mouse interaction
 
-Native click+drag text selection must work in the transcript with no modifier keys. Implementation: xterm Alternate Scroll Mode (`?1007h`) only. Forbidden: `?1000h`, `?1002h`, `?1003h`, `?1006h`, `EnableMouseCapture`, `DisableMouseCapture`, `Event::Mouse`. Guard tests read source via `include_str!` and fail when forbidden patterns reappear.
+Native click+drag text selection must work in the transcript with no modifier keys. Implementation: xterm Alternate Scroll Mode (`?1007h`) only. Forbidden: `?1000h`, `?1002h`, `?1003h`, `?1006h`, `EnableMouseCapture`, `DisableMouseCapture`, and any per-event mouse capture. Guard tests fail when forbidden patterns reappear.
 
 ### Tool conservation
 
@@ -55,13 +42,11 @@ Every content line in the patch DSL needs `+`, (space), or `-`. See [patch-dsl](
 
 ## Database
 
-SQLite at `~/.borg/borg.db`. V39 migrations run on `Database::open()`.
+SQLite at `~/.borg/borg.db`. Migrations run on open.
 
 Key tables: `sessions`, `messages`, `scheduled_tasks`, `task_runs`, `channel_sessions`, `channel_messages`, `settings`, `pairing_requests`, `approved_senders`, `embedding_cache`, `vitals_events`, `projects`, `workflows`, `workflow_steps`, `memory_entries`, `skill_audit`, `doctor_runs`, `activity_log`.
 
 ## Git utilities
-
-`crates/core/src/git.rs`:
 
 - Ghost commits — snapshot the repo on session start using a temp index. Enables atomic undo without polluting the real git log.
 - Git context — branch, recent commits, dirty status. Injected into the system prompt.
@@ -70,8 +55,8 @@ Key tables: `sessions`, `messages`, `scheduled_tasks`, `task_runs`, `channel_ses
 
 Logs at `~/.borg/logs/`:
 
-- `tui.log` — TUI session
+- Session log — interactive session output
 - `daemon.log`, `daemon.err` — daemon
 - `{date}.jsonl` — structured JSON logs
 
-`RUST_LOG=debug borg` for module-level control.
+Raise verbosity with `borg --verbose`. See [contributing/development](../contributing/development) for module-level log-level control.

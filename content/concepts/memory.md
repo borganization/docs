@@ -46,13 +46,15 @@ Each turn the agent builds a memory context within a token budget:
 
 ### Configuration
 
-```sh
-borg settings set memory.max_context_tokens 8000
-borg settings set memory.embeddings.enabled true
-borg settings set memory.embeddings.recency_weight 0.2
-borg settings set memory.embeddings.bm25_weight 0.3
-borg settings set memory.embeddings.vector_weight 0.7
-```
+Set these in `/settings`:
+
+| Key | Default |
+|---|---|
+| `memory.max_context_tokens` | `8000` |
+| `memory.embeddings.enabled` | `true` |
+| `memory.embeddings.recency_weight` | `0.2` |
+| `memory.embeddings.bm25_weight` | `0.3` |
+| `memory.embeddings.vector_weight` | `0.7` |
 
 ## Short-term memory
 
@@ -67,7 +69,7 @@ Short-term memory never writes directly to long-term storage. On session end, th
 
 ## Consolidation
 
-Scheduled tasks seeded on first migration to V34:
+Scheduled tasks seeded into the database on first run:
 
 | When | What |
 |---|---|

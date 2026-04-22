@@ -4,7 +4,7 @@
 
 ## macOS: Seatbelt
 
-`sandbox-exec` with a generated `.sb` policy. Deny-all default. Per-channel or per-script sandbox config opens specific holes: `allow_network`, `allow_fs_read`, `allow_fs_write`. Script channels set these in `channel.toml` (see [guides/adding-channels](../guides/adding-channels)). Global defaults live under `security.sandbox.*` in [settings](../reference/settings).
+`sandbox-exec` with a generated `.sb` policy. Deny-all default. Per-channel or per-script sandbox config opens specific holes: `allow_network`, `allow_fs_read`, `allow_fs_write`. Script channels set these in `channel.toml` (see [guides/adding-custom-channels](../guides/adding-custom-channels)). Global defaults live under `security.sandbox.*` in [settings](../reference/settings).
 
 ## Linux: Bubblewrap
 
@@ -34,7 +34,3 @@ private_key
 ## Catastrophic command denylist
 
 Inside the sandbox, `run_shell` still refuses a short list of universally destructive commands: `rm -rf /`, `mkfs`, `dd if=...of=/dev/...`, `curl | sh`. Blocked pre-exec, not by the sandbox.
-
-## Reference
-
-`crates/sandbox/` is the library. `#![warn(missing_docs)]` stays enforced. Every public item gets a doc comment.

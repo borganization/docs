@@ -67,4 +67,4 @@ A user skill named `slack` overrides the compiled-in `slack` skill. Same name, y
 
 ## Auditing
 
-V39 tracks SHA-256 of every user `SKILL.md` in the `skill_audit` table. The doctor flags post-install tampering. Edit the file and the doctor notes the file as "modified" on the next daily sweep.
+Borg tracks a SHA-256 of every user `SKILL.md` in the `skill_audit` table. The doctor flags post-install tampering. Edit the file and the doctor notes the file as "modified" on the next daily sweep.

@@ -1,6 +1,6 @@
 # iMessage
 
-macOS only. Compiled behind `#[cfg(target_os = "macos")]`.
+macOS only. Guarded at compile time so non-macOS builds omit the integration.
 
 ## How it works
 
@@ -15,12 +15,7 @@ No cloud. No phone jailbreak. No separate device. Your Mac must sign into iMessa
 
 1. Grant Borg Full Disk Access in System Settings, Privacy and Security. Borg needs access to read `chat.db`.
 2. Grant Automation permission for Messages. AppleScript needs the grant to send.
-3. Enable:
-
-   ```sh
-   borg settings set gateway.imessage.enabled true
-   borg daemon restart
-   ```
+3. In `/settings`, flip `gateway.imessage.enabled` to `true` and restart the daemon.
 
 Done. No tokens. No webhooks.
 

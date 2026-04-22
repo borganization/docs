@@ -22,11 +22,6 @@ A long single turn hits context limits and has no checkpointing. Workflows deliv
 
 All Claude models skip workflows (`workflow.enabled = "auto"`). Claude's native tool-use loop stays durable enough on its own. Extra indirection adds latency with no gain.
 
-## Key files
-
-- `crates/core/src/workflow/` — planner and dispatcher
-- `crates/core/src/db/workflow.rs` — SQLite tables
-
 ## See also
 
 - [heartbeat](heartbeat) — one common trigger for workflows

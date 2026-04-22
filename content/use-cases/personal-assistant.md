@@ -7,16 +7,10 @@ Your Borg on your phone, talking to you where you already are.
 1. Pick a channel you will read. iMessage on Apple, Telegram otherwise.
    - [channels/imessage](../channels/imessage)
    - [channels/telegram](../channels/telegram)
-2. Point Borg at your calendar and email via skills:
-   ```sh
-   borg credentials set GOOGLE_CALENDAR_TOKEN ...
-   borg credentials set GMAIL_TOKEN ...
-   ```
-3. Enable the [heartbeat](../concepts/heartbeat):
-   ```sh
-   borg settings set heartbeat.enabled true
-   borg settings set heartbeat.cron "0 8,13,18 * * *"
-   ```
+2. Point Borg at your calendar and email via skills. Store `GOOGLE_CALENDAR_TOKEN` and `GMAIL_TOKEN` in `/settings` under credentials.
+3. Enable the [heartbeat](../concepts/heartbeat) in `/settings`:
+   - `heartbeat.enabled` → `true`
+   - `heartbeat.cron` → `0 8,13,18 * * *`
 4. Write `~/.borg/HEARTBEAT.md`:
    ```markdown
    # Heartbeat

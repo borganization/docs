@@ -2,12 +2,7 @@
 
 Settings live in the SQLite `settings` table. No `config.toml`.
 
-```sh
-borg settings set <key> <value>
-borg settings get <key>
-borg settings unset <key>
-borg settings list
-```
+Open `/settings` to browse, search, and change any value. For scripting, `borg help` lists CLI equivalents.
 
 ## LLM
 
@@ -49,10 +44,10 @@ borg settings list
 | `gateway.<channel>.enabled` | `false` per channel |
 | `gateway.dm_policy` | `pairing` |
 
-Bindings and channel policies store as JSON:
+Bindings and channel policies store as JSON. Set `gateway.bindings` in `/settings`:
 
-```sh
-borg settings set gateway.bindings '[{"channel":"slack","model":"claude-opus-4-7"}]'
+```json
+[{"channel":"slack","model":"claude-opus-4-7"}]
 ```
 
 ## Security
@@ -84,11 +79,9 @@ borg settings set gateway.bindings '[{"channel":"slack","model":"claude-opus-4-7
 | `tts.enabled` | `false` |
 | `image_gen.enabled` | `false` |
 
-## TUI
+## Appearance
 
 | Key | Default |
 |---|---|
-| `tui.theme` | `auto` |
-| `tui.markdown_rendering` | `true` |
-
-See `crates/core/src/config/settings_table.rs` for the authoritative registry.
+| `ui.theme` | `auto` |
+| `ui.markdown_rendering` | `true` |

@@ -29,7 +29,7 @@ Borg rebuilds the prompt each turn:
 5. `<long_term_memory trust="stored">`. INDEX plus top-k semantic matches. Token-budgeted.
 6. Project docs (`CLAUDE.md`, `AGENTS.md`) when present.
 7. Coding instructions.
-8. Available [skills](skills). Metadata always, full body when in budget.
+8. Available [plugins](plugins). Metadata always, full body when in budget.
 9. `<working_memory>`. Session facts. Dynamic suffix.
 
 The stable prefix caches across turns. Only the suffix changes turn to turn. Prompt caching pays off.
@@ -39,7 +39,7 @@ The stable prefix caches across turns. Only the suffix changes turn to turn. Pro
 The LLM emits a JSON block per tool call. The dispatcher:
 
 - Validates args against the tool's JSON schema.
-- Runs the handler at `crates/core/src/tool_handlers/<name>.rs`.
+- Runs the tool's handler.
 - Streams output back as a tool-result message.
 - Persists the message immediately. A crash mid-turn loses no work.
 
@@ -52,7 +52,3 @@ Responses stream token by token. The renderer strips `<internal>...</internal>` 
 ## Crash recovery
 
 Every message, tool call, and tool result writes to SQLite as you go. Kill `borg` mid-turn. The next `borg` resumes the session with no lost work.
-
-## Source
-
-`crates/core/src/agent.rs` runs about 800 lines. Start there to study the loop in detail.

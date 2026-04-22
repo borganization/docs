@@ -4,11 +4,7 @@ Web browse, summarize, remember. Ask again a week later and Borg still knows.
 
 ## Setup
 
-1. Enable web and browser:
-   ```sh
-   borg settings set web.enabled true
-   borg settings set browser.enabled true
-   ```
+1. Enable web and browser in `/settings`: `web.enabled` → `true`, `browser.enabled` → `true`.
 2. Use a project for the research topic:
    ```
    > /projects create "retrieval-systems"
@@ -38,8 +34,8 @@ borg:  (memory_search finds mmr-2026)
 
 ## Tip
 
-Bind a strong model for research:
+Bind a strong model for this project. Set `gateway.bindings` in `/settings`:
 
-```sh
-borg settings set gateway.bindings '[{"channel":"tui","project":"retrieval-systems","provider":"anthropic","model":"claude-opus-4-7","thinking":"extended"}]'
+```json
+[{"project":"retrieval-systems","provider":"anthropic","model":"claude-opus-4-7","thinking":"extended"}]
 ```
