@@ -30,6 +30,11 @@
         "children": []
       },
       {
+        "path": "concepts/borganism",
+        "title": "Borganism",
+        "children": []
+      },
+      {
         "path": "concepts/channels",
         "title": "Channels",
         "children": []
@@ -55,38 +60,18 @@
         "children": []
       },
       {
+        "path": "concepts/plugins",
+        "title": "Plugins",
+        "children": []
+      },
+      {
         "path": "concepts/projects",
         "title": "Projects",
         "children": []
       },
       {
-        "path": "concepts/prompt-injection-defense",
-        "title": "Prompt Injection Defense",
-        "children": []
-      },
-      {
-        "path": "concepts/sandboxing",
-        "title": "Sandboxing",
-        "children": []
-      },
-      {
         "path": "concepts/self-healing",
         "title": "Self-Healing",
-        "children": []
-      },
-      {
-        "path": "concepts/skills",
-        "title": "Skills",
-        "children": []
-      },
-      {
-        "path": "concepts/tools",
-        "title": "Tools",
-        "children": []
-      },
-      {
-        "path": "concepts/vitals",
-        "title": "Vitals",
         "children": []
       },
       {
@@ -143,6 +128,32 @@
     ]
   },
   {
+    "path": "borganism",
+    "title": "Borganism",
+    "children": [
+      {
+        "path": "borganism/bond",
+        "title": "Bond",
+        "children": []
+      },
+      {
+        "path": "borganism/evolution",
+        "title": "Evolution",
+        "children": []
+      },
+      {
+        "path": "borganism/personality",
+        "title": "Personality",
+        "children": []
+      },
+      {
+        "path": "borganism/vitals",
+        "title": "Vitals",
+        "children": []
+      }
+    ]
+  },
+  {
     "path": "use-cases",
     "title": "Use Cases",
     "children": [
@@ -179,12 +190,43 @@
     ]
   },
   {
+    "path": "security",
+    "title": "Security",
+    "children": [
+      {
+        "path": "security/layered-defense",
+        "title": "Layered Defense",
+        "children": []
+      },
+      {
+        "path": "security/prompt-injection-defense",
+        "title": "Prompt Injection Defense",
+        "children": []
+      },
+      {
+        "path": "security/sandboxing",
+        "title": "Sandboxing",
+        "children": []
+      },
+      {
+        "path": "security/secrets-and-credentials",
+        "title": "Secrets and credentials",
+        "children": []
+      },
+      {
+        "path": "security/security-check",
+        "title": "Security Check",
+        "children": []
+      }
+    ]
+  },
+  {
     "path": "guides",
     "title": "Guides",
     "children": [
       {
-        "path": "guides/adding-channels",
-        "title": "Adding Channels",
+        "path": "guides/adding-custom-channels",
+        "title": "Adding Custom Channels",
         "children": []
       },
       {
@@ -231,11 +273,6 @@
       {
         "path": "reference/settings",
         "title": "Settings",
-        "children": []
-      },
-      {
-        "path": "reference/tools",
-        "title": "Tool Catalog",
         "children": []
       }
     ]

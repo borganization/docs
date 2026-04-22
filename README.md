@@ -2,7 +2,18 @@
 
 Static documentation for [borganization/borg](https://github.com/borganization/borg).
 
-Live: https://borganization.github.io/docs/
+- Main repo: https://github.com/borganization/borg
+- Live docs: https://borganization.github.io/docs/
+- Getting started: https://borganization.github.io/docs/getting-started/
+
+## Install borg
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/borganization/borg/main/scripts/install.sh | bash
+borg
+```
+
+Full install options: [docs/getting-started/install](https://borganization.github.io/docs/getting-started/install).
 
 ## Design
 
@@ -44,3 +55,7 @@ GitHub Pages. Settings, Pages, Source, "GitHub Actions". Push to `main` and the 
 ## License
 
 MIT. See `LICENSE`.
+
+---
+
+This repo hosts the docs site only. Source code, issues, and releases live at [github.com/borganization/borg](https://github.com/borganization/borg).

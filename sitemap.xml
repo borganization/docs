@@ -7,16 +7,15 @@
   <url><loc>https://borganization.github.io/docs/getting-started/providers</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/agent-loop</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/concepts/borganism</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/channels</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/collaboration-modes</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/heartbeat</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/hooks</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/memory</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/concepts/plugins</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/projects</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/self-healing</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/concepts/skills</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/concepts/tools</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/concepts/vitals</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/concepts/workflows</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/channels/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/channels/discord</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
@@ -27,6 +26,11 @@
   <url><loc>https://borganization.github.io/docs/channels/teams</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/channels/telegram</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/channels/twilio</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/borganism/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/borganism/bond</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/borganism/evolution</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/borganism/personality</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/borganism/vitals</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/use-cases/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/use-cases/cross-device-notes</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/use-cases/developer-copilot</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
@@ -34,8 +38,14 @@
   <url><loc>https://borganization.github.io/docs/use-cases/ops-bot</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/use-cases/personal-assistant</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/use-cases/research-assistant</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/security/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/security/layered-defense</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/security/prompt-injection-defense</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/security/sandboxing</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/security/secrets-and-credentials</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/security/security-check</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/guides/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/guides/adding-channels</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://borganization.github.io/docs/guides/adding-custom-channels</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/guides/migrating</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/guides/scheduling</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/guides/writing-skills</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
@@ -45,14 +55,9 @@
   <url><loc>https://borganization.github.io/docs/reference/hooks-api</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/reference/patch-dsl</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/reference/settings</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/reference/tools</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/contributing/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/contributing/development</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/contributing/roadmap</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/contributing/style</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
   <url><loc>https://borganization.github.io/docs/contributing/testing</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/security/</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/security/borg-doctor</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/security/prompt-injection-defense</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://borganization.github.io/docs/security/sandboxing</loc><lastmod>2026-04-22</lastmod><changefreq>weekly</changefreq></url>
 </urlset>

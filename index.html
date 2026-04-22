@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // Set <base> so the same build works at /docs/ (GitHub Pages project page)
+  // and at / (local `python3 -m http.server`, custom-domain deploys).
+  (function () {
+    var base = location.pathname.indexOf("/docs/") === 0 ? "/docs/" : "/";
+    document.write('<base href="' + base + '">');
+  })();
+</script>
 <title>Borg Documentation</title>
 <meta name="description" content="Borg is an open-source personal AI assistant that runs on your machine, remembers you, and gets better over time. Ships as one binary with every integration compiled in.">
 <meta name="keywords" content="borg, ai assistant, personal ai, open source ai, local ai, rust ai agent, claude, openai, anthropic, ollama, agent framework, llm">
@@ -10,7 +18,7 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://borganization.github.io/docs/">
-<link rel="sitemap" type="application/xml" href="/docs/sitemap.xml">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Borg Documentation">
 <meta property="og:title" content="Borg Documentation">
@@ -19,7 +27,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Borg Documentation">
 <meta name="twitter:description" content="Open-source personal AI assistant. One binary, every integration compiled in. Your data stays on your machine.">
-<link rel="stylesheet" href="/docs/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,7 +45,7 @@
 </head>
 <body>
 <header id="topbar">
-  <div id="title"><a href="/docs/">Borg Documentation</a></div>
+  <div id="title"><a href="./">Borg Documentation</a></div>
   <nav id="breadcrumbs"></nav>
   <div id="actions">
     <a href="https://github.com/borganization/borg" target="_blank" rel="noopener">GitHub</a>
@@ -65,7 +73,7 @@
     </footer>
   </main>
 </div>
-<script src="/docs/assets/marked.min.js"></script>
-<script src="/docs/assets/app.js"></script>
+<script src="assets/marked.min.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>

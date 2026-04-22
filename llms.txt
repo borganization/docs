@@ -16,8 +16,7 @@
 
 - [Agent loop](https://borganization.github.io/docs/content/concepts/agent-loop.md): Turn structure, system prompt assembly, streaming, crash recovery.
 - [Memory](https://borganization.github.io/docs/content/concepts/memory.md): Long-term and working memory, hybrid vector+BM25 retrieval.
-- [Skills](https://borganization.github.io/docs/content/concepts/skills.md): Progressive-loading markdown capabilities the agent can compose.
-- [Tools](https://borganization.github.io/docs/content/concepts/tools.md): Typed, schema-validated handlers compiled into the binary.
+- [Plugins](https://borganization.github.io/docs/content/concepts/plugins.md): Built-in native integrations and third-party skills, installed from one catalog.
 - [Hooks](https://borganization.github.io/docs/content/concepts/hooks.md): Lifecycle events with Claude Code / codex-compatible user scripts.
 - [Workflows](https://borganization.github.io/docs/content/concepts/workflows.md): Durable multi-step orchestration with per-step provider override.
 - [Heartbeat](https://borganization.github.io/docs/content/concepts/heartbeat.md): Proactive check-ins, quiet hours, dedup.
@@ -43,14 +42,13 @@
 ## Guides
 
 - [Writing skills](https://borganization.github.io/docs/content/guides/writing-skills.md)
-- [Adding channels](https://borganization.github.io/docs/content/guides/adding-channels.md): Script channels via `channel.toml`.
+- [Adding channels](https://borganization.github.io/docs/content/guides/adding-custom-channels.md): Script channels via `channel.toml`.
 - [Scheduling](https://borganization.github.io/docs/content/guides/scheduling.md): Cron tasks, prompt tasks, workflows.
 - [Migrating](https://borganization.github.io/docs/content/guides/migrating.md)
 
 ## Reference
 
 - [Commands](https://borganization.github.io/docs/content/reference/commands.md): Slash commands and CLI flags.
-- [Tools](https://borganization.github.io/docs/content/reference/tools.md): Full tool catalog with schemas.
 - [Settings](https://borganization.github.io/docs/content/reference/settings.md): SQLite-backed settings keys.
 - [Hooks API](https://borganization.github.io/docs/content/reference/hooks-api.md): User-script hook JSON schema.
 - [Patch DSL](https://borganization.github.io/docs/content/reference/patch-dsl.md): `apply_patch` grammar.

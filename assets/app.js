@@ -13,13 +13,20 @@
   var titleByPath = {};
 
   // BASE is "" for root deployments and "/docs" for project-page deployments
-  // (auto-detected from <script src>, so the same build works for both).
+  // (derived from the resolved <script src>, which respects any <base href>).
   function computeBase() {
     var scripts = document.getElementsByTagName("script");
     for (var i = 0; i < scripts.length; i++) {
-      var src = scripts[i].getAttribute("src") || "";
-      var m = src.match(/^(.*)\/assets\/app\.js(?:\?.*)?$/);
-      if (m) return m[1];
+      var src = scripts[i].src || "";
+      var m = src.match(/\/assets\/app\.js(?:\?.*)?$/);
+      if (m) {
+        try {
+          var u = new URL(src);
+          return u.pathname.replace(/\/assets\/app\.js(?:\?.*)?$/, "");
+        } catch (e) {
+          return "";
+        }
+      }
     }
     return "";
   }
