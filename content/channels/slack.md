@@ -21,17 +21,6 @@ Native integration. Uses Slack's Events API.
    borg daemon restart
    ```
 
-## Binding
-
-```toml
-[[gateway.bindings]]
-channel = "slack"
-workspace = "T0123ABCD"    # team id
-provider = "openai"
-model = "gpt-5"
-memory_scope = "project:work"
-```
-
 ## Threads
 
 Slack threads use `thread_ts`. A thread reply keeps a separate session from the channel-level DM.

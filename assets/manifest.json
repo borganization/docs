@@ -1,46 +1,21 @@
 [
   {
-    "path": "channels",
-    "title": "Channels",
+    "path": "getting-started",
+    "title": "Getting Started",
     "children": [
       {
-        "path": "channels/discord",
-        "title": "Discord",
+        "path": "getting-started/first-run",
+        "title": "First Run",
         "children": []
       },
       {
-        "path": "channels/google-chat",
-        "title": "Google Chat",
+        "path": "getting-started/install",
+        "title": "Install",
         "children": []
       },
       {
-        "path": "channels/imessage",
-        "title": "iMessage",
-        "children": []
-      },
-      {
-        "path": "channels/signal",
-        "title": "Signal",
-        "children": []
-      },
-      {
-        "path": "channels/slack",
-        "title": "Slack",
-        "children": []
-      },
-      {
-        "path": "channels/teams",
-        "title": "Microsoft Teams",
-        "children": []
-      },
-      {
-        "path": "channels/telegram",
-        "title": "Telegram",
-        "children": []
-      },
-      {
-        "path": "channels/twilio",
-        "title": "Twilio (WhatsApp and SMS)",
+        "path": "getting-started/providers",
+        "title": "Providers",
         "children": []
       }
     ]
@@ -122,48 +97,83 @@
     ]
   },
   {
-    "path": "contributing",
-    "title": "Contributing",
+    "path": "channels",
+    "title": "Channels",
     "children": [
       {
-        "path": "contributing/development",
-        "title": "Development",
+        "path": "channels/discord",
+        "title": "Discord",
         "children": []
       },
       {
-        "path": "contributing/roadmap",
-        "title": "Roadmap",
+        "path": "channels/google-chat",
+        "title": "Google Chat",
         "children": []
       },
       {
-        "path": "contributing/style",
-        "title": "Code Style",
+        "path": "channels/imessage",
+        "title": "iMessage",
         "children": []
       },
       {
-        "path": "contributing/testing",
-        "title": "Testing",
+        "path": "channels/signal",
+        "title": "Signal",
+        "children": []
+      },
+      {
+        "path": "channels/slack",
+        "title": "Slack",
+        "children": []
+      },
+      {
+        "path": "channels/teams",
+        "title": "Microsoft Teams",
+        "children": []
+      },
+      {
+        "path": "channels/telegram",
+        "title": "Telegram",
+        "children": []
+      },
+      {
+        "path": "channels/twilio",
+        "title": "Twilio (WhatsApp and SMS)",
         "children": []
       }
     ]
   },
   {
-    "path": "getting-started",
-    "title": "Getting Started",
+    "path": "use-cases",
+    "title": "Use Cases",
     "children": [
       {
-        "path": "getting-started/first-run",
-        "title": "First Run",
+        "path": "use-cases/cross-device-notes",
+        "title": "Cross-Device Notes",
         "children": []
       },
       {
-        "path": "getting-started/install",
-        "title": "Install",
+        "path": "use-cases/developer-copilot",
+        "title": "Developer Copilot",
         "children": []
       },
       {
-        "path": "getting-started/providers",
-        "title": "Providers",
+        "path": "use-cases/home-automation",
+        "title": "Home Automation",
+        "children": []
+      },
+      {
+        "path": "use-cases/ops-bot",
+        "title": "Ops Bot",
+        "children": []
+      },
+      {
+        "path": "use-cases/personal-assistant",
+        "title": "Personal Assistant",
+        "children": []
+      },
+      {
+        "path": "use-cases/research-assistant",
+        "title": "Research Assistant",
         "children": []
       }
     ]
@@ -231,37 +241,27 @@
     ]
   },
   {
-    "path": "use-cases",
-    "title": "Use Cases",
+    "path": "contributing",
+    "title": "Contributing",
     "children": [
       {
-        "path": "use-cases/cross-device-notes",
-        "title": "Cross-Device Notes",
+        "path": "contributing/development",
+        "title": "Development",
         "children": []
       },
       {
-        "path": "use-cases/developer-copilot",
-        "title": "Developer Copilot",
+        "path": "contributing/roadmap",
+        "title": "Roadmap",
         "children": []
       },
       {
-        "path": "use-cases/home-automation",
-        "title": "Home Automation",
+        "path": "contributing/style",
+        "title": "Code Style",
         "children": []
       },
       {
-        "path": "use-cases/ops-bot",
-        "title": "Ops Bot",
-        "children": []
-      },
-      {
-        "path": "use-cases/personal-assistant",
-        "title": "Personal Assistant",
-        "children": []
-      },
-      {
-        "path": "use-cases/research-assistant",
-        "title": "Research Assistant",
+        "path": "contributing/testing",
+        "title": "Testing",
         "children": []
       }
     ]

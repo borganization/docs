@@ -39,25 +39,16 @@ See [guides/adding-channels](../guides/adding-channels).
 
 ## Gateway bindings
 
-`[[gateway.bindings]]` entries route per-channel or per-sender LLM overrides:
+Bindings route per-channel or per-sender LLM overrides (provider, model, memory scope, identity, temperature). Manage them via `borg settings`:
 
-```toml
-[[gateway.bindings]]
-channel = "slack"
-workspace = "acme"
-provider = "anthropic"
-model = "claude-opus-4-7"
-memory_scope = "project:work"
-identity = "professional"
-temperature = 0.3
-
-[[gateway.bindings]]
-channel = "telegram"
-sender = "123456789"
-provider = "openai"
-model = "gpt-5"
-memory_scope = "global"
+```sh
+borg settings set gateway.bindings '[
+  {"channel":"slack","workspace":"acme","provider":"anthropic","model":"claude-opus-4-7","memory_scope":"project:work","identity":"professional","temperature":0.3},
+  {"channel":"telegram","sender":"123456789","provider":"openai","model":"gpt-5","memory_scope":"global"}
+]'
 ```
+
+See [reference/settings](../reference/settings).
 
 ## Sender pairing
 

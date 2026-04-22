@@ -21,16 +21,6 @@ Native integration. One channel, two transports.
    borg daemon restart
    ```
 
-## Binding
-
-```toml
-[[gateway.bindings]]
-channel = "twilio"
-transport = "whatsapp"
-sender = "+1555..."
-provider = "anthropic"
-```
-
 ## Verification
 
 Inbound webhooks verify with Twilio's HMAC signature.

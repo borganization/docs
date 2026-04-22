@@ -1,6 +1,6 @@
 # Channels
 
-Native channels compile into the binary. Setup: get API credentials, drop them in `borg credentials`, add a `[[gateway.bindings]]`. Done.
+Native channels compile into the binary. Setup: get API credentials, drop them in `borg credentials`, enable the channel with `borg settings set gateway.<channel>.enabled true`. Done.
 
 - [telegram](telegram)
 - [slack](slack)

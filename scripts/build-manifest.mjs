@@ -11,6 +11,18 @@ const ROOT = join(__dirname, "..");
 const CONTENT = join(ROOT, "content");
 const OUT = join(ROOT, "assets", "manifest.json");
 
+// Preferred display order for top-level sections. Anything not listed falls
+// through to alphabetical after these.
+const TOP_ORDER = [
+  "getting-started",
+  "concepts",
+  "channels",
+  "use-cases",
+  "guides",
+  "reference",
+  "contributing",
+];
+
 async function readTitle(file) {
   try {
     const text = await readFile(file, "utf8");
@@ -54,5 +66,13 @@ async function walk(dir) {
 }
 
 const tree = await walk(CONTENT);
+tree.sort((a, b) => {
+  const ai = TOP_ORDER.indexOf(a.path);
+  const bi = TOP_ORDER.indexOf(b.path);
+  if (ai !== -1 && bi !== -1) return ai - bi;
+  if (ai !== -1) return -1;
+  if (bi !== -1) return 1;
+  return a.path.localeCompare(b.path);
+});
 await writeFile(OUT, JSON.stringify(tree, null, 2) + "\n", "utf8");
 console.log(`wrote ${relative(ROOT, OUT)} (${tree.length} top-level entries)`);

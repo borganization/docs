@@ -6,14 +6,8 @@ Slack bot that runs scripts, reads logs, and pages on-call.
 
 1. [channels/slack](../channels/slack) with a bot in `#oncall`.
 2. Bind a capable model:
-   ```toml
-   [[gateway.bindings]]
-   channel = "slack"
-   workspace = "T0123..."
-   provider = "anthropic"
-   model = "claude-sonnet-4-6"
-   memory_scope = "project:ops"
-   identity = "ops-bot"
+   ```sh
+   borg settings set gateway.bindings '[{"channel":"slack","workspace":"T0123...","provider":"anthropic","model":"claude-sonnet-4-6","memory_scope":"project:ops","identity":"ops-bot"}]'
    ```
 3. Install relevant skills:
    - `github` — PR and issue ops
@@ -22,14 +16,7 @@ Slack bot that runs scripts, reads logs, and pages on-call.
 
 ## Sandbox boundaries
 
-`run_shell` stays sandboxed. An ops bot often wants more holes:
-
-```toml
-[sandbox]
-allow_network = true
-allow_fs_read = ["/var/log", "~/deployment-scripts"]
-allow_fs_write = []  # keep writes off by default
-```
+`run_shell` stays sandboxed. An ops bot often wants more holes — allow outbound network and read access to `/var/log` and your deployment scripts, keep writes off by default. Configure per-channel/skill sandbox knobs (`allow_network`, `allow_fs_read`, `allow_fs_write`). See [concepts/sandboxing](../concepts/sandboxing).
 
 ## Example
 

@@ -26,17 +26,6 @@ Native integration. Webhook-based.
 
 5. Message your bot. First contact triggers a pairing request in the TUI.
 
-## Binding
-
-```toml
-[[gateway.bindings]]
-channel = "telegram"
-sender = "123456789"    # your Telegram user id
-provider = "anthropic"
-model = "claude-sonnet-4-6"
-memory_scope = "global"
-```
-
 ## Threads
 
 Telegram supergroup topics map to `message_thread_id`. Each topic gets a session.

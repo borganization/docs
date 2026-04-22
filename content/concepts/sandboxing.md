@@ -4,14 +4,7 @@
 
 ## macOS: Seatbelt
 
-`sandbox-exec` with a generated `.sb` policy. Deny-all default. The `[sandbox]` section per script or channel opens specific holes.
-
-```toml
-[sandbox]
-allow_network = true
-allow_fs_read = ["~/Documents/work"]
-allow_fs_write = ["~/Documents/work/out"]
-```
+`sandbox-exec` with a generated `.sb` policy. Deny-all default. Per-channel or per-script sandbox config opens specific holes: `allow_network`, `allow_fs_read`, `allow_fs_write`. Script channels set these in `channel.toml` (see [guides/adding-channels](../guides/adding-channels)). Global defaults live under `security.sandbox.*` in [settings](../reference/settings).
 
 ## Linux: Bubblewrap
 

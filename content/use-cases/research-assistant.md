@@ -40,11 +40,6 @@ borg:  (memory_search finds mmr-2026)
 
 Bind a strong model for research:
 
-```toml
-[[gateway.bindings]]
-channel = "tui"
-project = "retrieval-systems"
-provider = "anthropic"
-model = "claude-opus-4-7"
-thinking = "extended"
+```sh
+borg settings set gateway.bindings '[{"channel":"tui","project":"retrieval-systems","provider":"anthropic","model":"claude-opus-4-7","thinking":"extended"}]'
 ```

@@ -7,6 +7,10 @@
   var docEl = document.getElementById("doc");
   var crumbsEl = document.getElementById("breadcrumbs");
   var rawLinkEl = document.getElementById("raw-link");
+  var copyBtnEl = document.getElementById("copy-text");
+  var currentMd = "";
+  var currentRawUrl = "";
+  var titleByPath = {};
 
   // BASE is "" for root deployments and "/docs" for project-page deployments
   // (auto-detected from <script src>, so the same build works for both).
@@ -49,15 +53,17 @@
       crumbsEl.appendChild(sep);
       acc += "/" + parts[i];
       var a = document.createElement("a");
-      a.href = BASE + acc + (i < parts.length - 1 ? "/" : "");
-      a.textContent = parts[i];
+      var isDir = i < parts.length - 1;
+      a.href = BASE + acc + (isDir ? "/" : "");
+      var key = acc.slice(1) + (isDir ? "/" : "");
+      a.textContent = titleByPath[key] || titleByPath[acc.slice(1)] || parts[i];
       crumbsEl.appendChild(a);
     }
   }
 
   function loadPath(path, push) {
     var mdUrl = resolveMdUrl(path);
-    rawLinkEl.href = mdUrl;
+    currentRawUrl = mdUrl;
     renderBreadcrumbs(path);
     fetch(mdUrl, { cache: "no-cache" })
       .then(function (r) {
@@ -66,7 +72,7 @@
           if (!/\/index\.md$/.test(mdUrl)) {
             var alt = mdUrl.replace(/\.md$/, "/index.md");
             return fetch(alt).then(function (r2) {
-              if (r2.ok) { rawLinkEl.href = alt; return r2.text(); }
+              if (r2.ok) { currentRawUrl = alt; return r2.text(); }
               throw new Error("not found: " + path);
             });
           }
@@ -75,6 +81,7 @@
         return r.text();
       })
       .then(function (md) {
+        currentMd = md;
         var html = window.marked.parse(md);
         docEl.innerHTML = html;
         rewriteLinks();
@@ -123,9 +130,15 @@
       var n = nodes[i];
       var li = document.createElement("li");
       if (n.children && n.children.length) {
+        titleByPath[n.path + "/"] = n.title || n.path.split("/").pop();
         li.className = "dir";
         var label = document.createElement("span");
         label.className = "label";
+        var chevron = document.createElement("span");
+        chevron.className = "chevron";
+        chevron.setAttribute("role", "button");
+        chevron.setAttribute("aria-label", "toggle");
+        label.appendChild(chevron);
         // Directory label is a link to its index page (n.path is the dir path).
         var labelA = document.createElement("a");
         labelA.href = BASE + "/" + n.path + "/";
@@ -137,6 +150,7 @@
         renderTree(n.children, ul);
         li.appendChild(ul);
       } else {
+        titleByPath[n.path] = n.title || n.path.split("/").pop();
         li.className = "file";
         var a = document.createElement("a");
         a.href = BASE + "/" + n.path;
@@ -149,6 +163,17 @@
   }
 
   function interceptClicks() {
+    treeEl.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t && t.classList && t.classList.contains("chevron")) {
+        var dir = t.parentElement && t.parentElement.parentElement;
+        if (dir && dir.classList.contains("dir")) {
+          dir.classList.toggle("open");
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    });
     document.addEventListener("click", function (e) {
       var a = e.target;
       while (a && a.tagName !== "A") a = a.parentElement;
@@ -160,8 +185,10 @@
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       // Toggle directory open/close if clicking the label chevron area of a dir,
       // but still navigate to that dir's index.
+      if (a.host && a.host !== location.host) return;
       e.preventDefault();
-      var path = href;
+      // Use resolved pathname so relative hrefs like "../channels/" work.
+      var path = a.pathname || href;
       if (BASE && path.indexOf(BASE) === 0) path = path.slice(BASE.length);
       if (path.charAt(0) === "/") path = path.slice(1);
       loadPath(path, true);
@@ -169,6 +196,47 @@
   }
 
   function onPopState() { loadPath(currentPath(), false); }
+
+  function wireRawButton() {
+    if (!rawLinkEl) return;
+    rawLinkEl.addEventListener("click", function () {
+      if (!currentRawUrl) return;
+      window.open(currentRawUrl, "_blank", "noopener");
+    });
+  }
+
+  function wireCopyButton() {
+    if (!copyBtnEl) return;
+    var defaultLabel = copyBtnEl.textContent;
+    copyBtnEl.addEventListener("click", function () {
+      if (!currentMd) return;
+      var done = function () {
+        copyBtnEl.textContent = "copied";
+        copyBtnEl.classList.add("copied");
+        setTimeout(function () {
+          copyBtnEl.textContent = defaultLabel;
+          copyBtnEl.classList.remove("copied");
+        }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(currentMd).then(done, fallback);
+      } else {
+        fallback();
+      }
+      function fallback() {
+        var ta = document.createElement("textarea");
+        ta.value = currentMd;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  }
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"]/g, function (c) {
@@ -182,11 +250,15 @@
     .then(function (manifest) {
       renderTree(manifest, treeEl);
       interceptClicks();
+      wireCopyButton();
+      wireRawButton();
       window.addEventListener("popstate", onPopState);
       loadPath(currentPath(), false);
     })
     .catch(function (err) {
       treeEl.innerHTML = "<li><em>manifest missing — run build-manifest.mjs</em></li>";
+      wireCopyButton();
+      wireRawButton();
       loadPath(currentPath(), false);
     });
 })();
