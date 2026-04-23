@@ -26,14 +26,14 @@ Force an immediate heartbeat:
 /poke
 ```
 
-## Configuration
+## Advance Configuration
 
 Set these in `/settings`:
 
-| Key | Value |
-|---|---|
-| `heartbeat.enabled` | `true` |
-| `heartbeat.interval` | `30m` |
+| Key                     | Value         |
+| ----------------------- | ------------- |
+| `heartbeat.enabled`     | `true`        |
+| `heartbeat.interval`    | `30m`         |
 | `heartbeat.quiet_hours` | `00:00-06:00` |
 
 Use a cron string instead of an interval by setting `heartbeat.cron`:

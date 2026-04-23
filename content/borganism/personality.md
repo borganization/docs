@@ -6,7 +6,7 @@ Personality is the voice and tone your agent speaks in. You control it directly 
 
 Your agent's personality lives at `~/.borg/IDENTITY.md`. This file loads as the first part of the system prompt every turn.
 
-- Created during first-run onboarding from a chosen style (Professional, Friendly, Terse, Playful, Custom).
+- Created during onboarding from a chosen style (Professional, Friendly, Terse, Playful, Custom).
 - Edit it anytime with any text editor. Changes apply on the next turn.
 - The agent writes to this file too. When you correct tone or style, the agent updates its own identity.
 

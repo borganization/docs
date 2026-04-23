@@ -4,13 +4,13 @@
     "title": "Getting Started",
     "children": [
       {
-        "path": "getting-started/first-run",
-        "title": "First Run",
+        "path": "getting-started/install",
+        "title": "Install",
         "children": []
       },
       {
-        "path": "getting-started/install",
-        "title": "Install",
+        "path": "getting-started/onboarding",
+        "title": "Onboarding",
         "children": []
       },
       {
@@ -129,7 +129,7 @@
   },
   {
     "path": "borganism",
-    "title": "Borganism",
+    "title": "Borg Systems",
     "children": [
       {
         "path": "borganism/bond",

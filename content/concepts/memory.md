@@ -4,12 +4,12 @@ Borg runs a two-tier memory system. Short-term working memory for the current se
 
 ## Architecture
 
-| Tier | Storage | Lifetime | Rendered as |
-|---|---|---|---|
-| Short-term | `ShortTermMemory` struct (RAM) | Current session | `<working_memory>` (dynamic suffix) |
-| Long-term | SQLite `memory_entries` | Persistent | `<long_term_memory trust="stored">` (stable prefix) |
-| Identity | `~/.borg/IDENTITY.md` | Persistent | System prompt prefix |
-| Heartbeat | `~/.borg/HEARTBEAT.md` | Persistent | Heartbeat turns only |
+| Tier       | Storage                        | Lifetime        | Rendered as                                         |
+| ---------- | ------------------------------ | --------------- | --------------------------------------------------- |
+| Short-term | `ShortTermMemory` struct (RAM) | Current session | `<working_memory>` (dynamic suffix)                 |
+| Long-term  | SQLite `memory_entries`        | Persistent      | `<long_term_memory trust="stored">` (stable prefix) |
+| Identity   | `~/.borg/IDENTITY.md`          | Persistent      | System prompt prefix                                |
+| Heartbeat  | `~/.borg/HEARTBEAT.md`         | Persistent      | Heartbeat turns only                                |
 
 SQLite is the single source of truth for long-term memory. No filesystem memory files.
 
@@ -44,17 +44,17 @@ Each turn the agent builds a memory context within a token budget:
 - Hard cap: 20,000 tokens. Rejected above. Warns at 8,000.
 - Injection scanner rejects: prompt-override patterns, exfiltration attempts, invisible Unicode (ZWSP, RTL overrides, BOM).
 
-### Configuration
+### Advance Configuration
 
 Set these in `/settings`:
 
-| Key | Default |
-|---|---|
-| `memory.max_context_tokens` | `8000` |
-| `memory.embeddings.enabled` | `true` |
-| `memory.embeddings.recency_weight` | `0.2` |
-| `memory.embeddings.bm25_weight` | `0.3` |
-| `memory.embeddings.vector_weight` | `0.7` |
+| Key                                | Default |
+| ---------------------------------- | ------- |
+| `memory.max_context_tokens`        | `8000`  |
+| `memory.embeddings.enabled`        | `true`  |
+| `memory.embeddings.recency_weight` | `0.2`   |
+| `memory.embeddings.bm25_weight`    | `0.3`   |
+| `memory.embeddings.vector_weight`  | `0.7`   |
 
 ## Short-term memory
 
@@ -71,10 +71,10 @@ Short-term memory never writes directly to long-term storage. On session end, th
 
 Scheduled tasks seeded into the database on first run:
 
-| When | What |
-|---|---|
-| Nightly, 3 AM | Reviews the day's sessions. Appends to existing entries, creates new topics, or skips duplicates. |
-| Weekly, 4 AM Sunday | Dedupes, merges, tightens entries. Prunes embedding cache (>30 days unused). |
+| When                | What                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| Nightly, 3 AM       | Reviews the day's sessions. Appends to existing entries, creates new topics, or skips duplicates. |
+| Weekly, 4 AM Sunday | Dedupes, merges, tightens entries. Prunes embedding cache (>30 days unused).                      |
 
 ## Identity
 

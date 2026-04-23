@@ -1,8 +1,8 @@
-# First Run
+# Onboarding
 
 Your first `borg` command starts an onboarding flow. You pick:
 
-1. A provider and API key. Pick one:
+1. A provider and API key:
    - `OPENROUTER_API_KEY` — recommended default. One account, many models.
    - `OPENAI_API_KEY`
    - `ANTHROPIC_API_KEY`
@@ -16,38 +16,33 @@ Your first `borg` command starts an onboarding flow. You pick:
 
 3. Time zone and quiet hours. Used by the [heartbeat](../concepts/heartbeat) scheduler.
 
-After onboarding Borg drops you into a prompt:
-
-```
-~ borg
-(hit / to open the command palette, Ctrl+C twice to quit)
-> 
-```
-
 ## What just happened
 
-- `~/.borg/borg.db` was created. Migrations ran.
+- First memories formed. Borg opened its private store under `~/.borg/` and started a fresh session.
 - Default [plugins](../concepts/plugins) registered.
-- Two recurring tasks scheduled: nightly memory consolidation (3 AM) and weekly memory review (4 AM Sunday).
-- A daily self-healing sweep scheduled for 02:00.
-
-## Smoke test
-
-```
-> what's the weather in brooklyn?
-```
-
-With the `weather` skill available and `curl` installed, you get a live answer. Otherwise Borg explains what is missing.
+- Nightly memory consolidation scheduled for 3 AM.
+- Weekly memory review scheduled for 4 AM Sunday.
+- Daily self-healing sweep scheduled for 2 AM.
+- A ghost commit snapshotted your working directory, so any edit Borg makes is reversible with `/undo`.
 
 ## Common first-session commands
 
 | Command | Use |
 |---|---|
+| `/help` | List all commands |
 | `/settings` | Interactive settings popup |
 | `/model` | Switch provider or model |
+| `/mode` | Switch collaboration mode: Default, Execute, or Plan |
+| `/plan` | Toggle read-only Plan mode with auto-restore on proceed |
 | `/memory` | Inspect what Borg remembers |
 | `/plugins` | Manage plugins and channels |
-| `/stats` | [Vitals](../borganism/vitals): stability, focus, sync, growth, happiness |
-| `/help` | All commands |
+| `/skills` | List built-in and user skills |
+| `/schedule` | Manage scheduled prompts, cron commands, and workflows |
+| `/projects` | Create, switch, and archive projects |
+| `/status` | [Vitals](../borganism/vitals): stability, focus, sync, growth, happiness |
+| `/card` | Your agent's evolution card |
+| `/xp` | Progression level and bond |
+| `/poke` | Trigger an immediate heartbeat check-in |
+| `/doctor` | Run the self-healing sweep on demand |
 
 See [reference/commands](../reference/commands) for the full list.

@@ -3,7 +3,7 @@
 Three pages. Read top to bottom.
 
 - [install](install) — one-line installer, manual download, build from source
-- [first-run](first-run) — onboarding, picking a provider, where your data lives
+- [onboarding](onboarding) — picking a provider, personality, where your data lives
 - [providers](providers) — supported LLMs and how to pick one
 
 ## TL;DR

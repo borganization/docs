@@ -1,6 +1,6 @@
-# Borganism
+# Borg Systems
 
-The living side of your agent. Borg tracks health, growth, and relationship with you across sessions. Use it long enough and your generic agent specializes into a named companion with its own stats and quirks.
+Borganism is the living side of your agent: health, trust, growth, and voice. Borg accumulates state across sessions, so a generic agent turns into a specialized companion over time.
 
 - [vitals](vitals) — five health stats, event-sourced
 - [bond](bond) — trust score between you and the agent
