@@ -3,8 +3,8 @@
 Static documentation for [borganization/borg](https://github.com/borganization/borg).
 
 - Main repo: https://github.com/borganization/borg
-- Live docs: https://borganization.github.io/docs/
-- Getting started: https://borganization.github.io/docs/getting-started/
+- Live docs: https://docs.borganization.ai/
+- Getting started: https://docs.borganization.ai/getting-started/
 
 ## Install borg
 
@@ -13,7 +13,7 @@ curl -fsSL https://raw.githubusercontent.com/borganization/borg/main/scripts/ins
 borg
 ```
 
-Full install options: [docs/getting-started/install](https://borganization.github.io/docs/getting-started/install).
+Full install options: [docs/getting-started/install](https://docs.borganization.ai/getting-started/install).
 
 ## Design
 

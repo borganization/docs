@@ -4,69 +4,69 @@
 
 - Source: https://github.com/borganization/borg
 - License: MIT
-- Docs: https://borganization.github.io/docs/
+- Docs: https://docs.borganization.ai/
 
 ## Getting started
 
-- [Install](https://borganization.github.io/docs/content/getting-started/install.md): One-line curl installer, platform notes.
-- [First run](https://borganization.github.io/docs/content/getting-started/first-run.md): Onboarding, provider keys, personality seed.
-- [Providers](https://borganization.github.io/docs/content/getting-started/providers.md): OpenAI, Anthropic, OpenRouter, Gemini, DeepSeek, Groq, Ollama, Claude Code CLI.
+- [Install](https://docs.borganization.ai/content/getting-started/install.md): One-line curl installer, platform notes.
+- [First run](https://docs.borganization.ai/content/getting-started/first-run.md): Onboarding, provider keys, personality seed.
+- [Providers](https://docs.borganization.ai/content/getting-started/providers.md): OpenAI, Anthropic, OpenRouter, Gemini, DeepSeek, Groq, Ollama, Claude Code CLI.
 
 ## Concepts
 
-- [Agent loop](https://borganization.github.io/docs/content/concepts/agent-loop.md): Turn structure, system prompt assembly, streaming, crash recovery.
-- [Memory](https://borganization.github.io/docs/content/concepts/memory.md): Long-term and working memory, hybrid vector+BM25 retrieval.
-- [Plugins](https://borganization.github.io/docs/content/concepts/plugins.md): Built-in native integrations and third-party skills, installed from one catalog.
-- [Hooks](https://borganization.github.io/docs/content/concepts/hooks.md): Lifecycle events with Claude Code / codex-compatible user scripts.
-- [Workflows](https://borganization.github.io/docs/content/concepts/workflows.md): Durable multi-step orchestration with per-step provider override.
-- [Heartbeat](https://borganization.github.io/docs/content/concepts/heartbeat.md): Proactive check-ins, quiet hours, dedup.
-- [Self-healing](https://borganization.github.io/docs/content/concepts/self-healing.md): Daily maintenance sweep, stall detection, tamper audit.
-- [Sandboxing](https://borganization.github.io/docs/content/concepts/sandboxing.md): macOS Seatbelt and Linux Bubblewrap for `run_shell` and script channels.
-- [Collaboration modes](https://borganization.github.io/docs/content/concepts/collaboration-modes.md): Default, Execute, Plan.
-- [Projects](https://borganization.github.io/docs/content/concepts/projects.md): Per-project memory and context scoping.
-- [Vitals](https://borganization.github.io/docs/content/concepts/vitals.md): Five-stat agent health model.
-- [Prompt injection defense](https://borganization.github.io/docs/content/concepts/prompt-injection-defense.md): Trust tiers and mitigations.
-- [Channels](https://borganization.github.io/docs/content/concepts/channels.md): Overview of native and script channels.
+- [Agent loop](https://docs.borganization.ai/content/concepts/agent-loop.md): Turn structure, system prompt assembly, streaming, crash recovery.
+- [Memory](https://docs.borganization.ai/content/concepts/memory.md): Long-term and working memory, hybrid vector+BM25 retrieval.
+- [Plugins](https://docs.borganization.ai/content/concepts/plugins.md): Built-in native integrations and third-party skills, installed from one catalog.
+- [Hooks](https://docs.borganization.ai/content/concepts/hooks.md): Lifecycle events with Claude Code / codex-compatible user scripts.
+- [Workflows](https://docs.borganization.ai/content/concepts/workflows.md): Durable multi-step orchestration with per-step provider override.
+- [Heartbeat](https://docs.borganization.ai/content/concepts/heartbeat.md): Proactive check-ins, quiet hours, dedup.
+- [Self-healing](https://docs.borganization.ai/content/concepts/self-healing.md): Daily maintenance sweep, stall detection, tamper audit.
+- [Sandboxing](https://docs.borganization.ai/content/concepts/sandboxing.md): macOS Seatbelt and Linux Bubblewrap for `run_shell` and script channels.
+- [Collaboration modes](https://docs.borganization.ai/content/concepts/collaboration-modes.md): Default, Execute, Plan.
+- [Projects](https://docs.borganization.ai/content/concepts/projects.md): Per-project memory and context scoping.
+- [Vitals](https://docs.borganization.ai/content/concepts/vitals.md): Five-stat agent health model.
+- [Prompt injection defense](https://docs.borganization.ai/content/concepts/prompt-injection-defense.md): Trust tiers and mitigations.
+- [Channels](https://docs.borganization.ai/content/concepts/channels.md): Overview of native and script channels.
 
 ## Channels
 
-- [Telegram](https://borganization.github.io/docs/content/channels/telegram.md)
-- [Slack](https://borganization.github.io/docs/content/channels/slack.md)
-- [Discord](https://borganization.github.io/docs/content/channels/discord.md)
-- [Microsoft Teams](https://borganization.github.io/docs/content/channels/teams.md)
-- [Google Chat](https://borganization.github.io/docs/content/channels/google-chat.md)
-- [Signal](https://borganization.github.io/docs/content/channels/signal.md)
-- [Twilio (WhatsApp, SMS)](https://borganization.github.io/docs/content/channels/twilio.md)
-- [iMessage (macOS only)](https://borganization.github.io/docs/content/channels/imessage.md)
+- [Telegram](https://docs.borganization.ai/content/channels/telegram.md)
+- [Slack](https://docs.borganization.ai/content/channels/slack.md)
+- [Discord](https://docs.borganization.ai/content/channels/discord.md)
+- [Microsoft Teams](https://docs.borganization.ai/content/channels/teams.md)
+- [Google Chat](https://docs.borganization.ai/content/channels/google-chat.md)
+- [Signal](https://docs.borganization.ai/content/channels/signal.md)
+- [Twilio (WhatsApp, SMS)](https://docs.borganization.ai/content/channels/twilio.md)
+- [iMessage (macOS only)](https://docs.borganization.ai/content/channels/imessage.md)
 
 ## Guides
 
-- [Writing skills](https://borganization.github.io/docs/content/guides/writing-skills.md)
-- [Adding channels](https://borganization.github.io/docs/content/guides/adding-custom-channels.md): Script channels via `channel.toml`.
-- [Scheduling](https://borganization.github.io/docs/content/guides/scheduling.md): Cron tasks, prompt tasks, workflows.
-- [Migrating](https://borganization.github.io/docs/content/guides/migrating.md)
+- [Writing skills](https://docs.borganization.ai/content/guides/writing-skills.md)
+- [Adding channels](https://docs.borganization.ai/content/guides/adding-custom-channels.md): Script channels via `channel.toml`.
+- [Scheduling](https://docs.borganization.ai/content/guides/scheduling.md): Cron tasks, prompt tasks, workflows.
+- [Migrating](https://docs.borganization.ai/content/guides/migrating.md)
 
 ## Reference
 
-- [Commands](https://borganization.github.io/docs/content/reference/commands.md): Slash commands and CLI flags.
-- [Settings](https://borganization.github.io/docs/content/reference/settings.md): SQLite-backed settings keys.
-- [Hooks API](https://borganization.github.io/docs/content/reference/hooks-api.md): User-script hook JSON schema.
-- [Patch DSL](https://borganization.github.io/docs/content/reference/patch-dsl.md): `apply_patch` grammar.
-- [Architecture](https://borganization.github.io/docs/content/reference/architecture.md): Workspace layout and invariants.
+- [Commands](https://docs.borganization.ai/content/reference/commands.md): Slash commands and CLI flags.
+- [Settings](https://docs.borganization.ai/content/reference/settings.md): SQLite-backed settings keys.
+- [Hooks API](https://docs.borganization.ai/content/reference/hooks-api.md): User-script hook JSON schema.
+- [Patch DSL](https://docs.borganization.ai/content/reference/patch-dsl.md): `apply_patch` grammar.
+- [Architecture](https://docs.borganization.ai/content/reference/architecture.md): Workspace layout and invariants.
 
 ## Use cases
 
-- [Developer copilot](https://borganization.github.io/docs/content/use-cases/developer-copilot.md)
-- [Personal assistant](https://borganization.github.io/docs/content/use-cases/personal-assistant.md)
-- [Research assistant](https://borganization.github.io/docs/content/use-cases/research-assistant.md)
-- [Ops bot](https://borganization.github.io/docs/content/use-cases/ops-bot.md)
-- [Home automation](https://borganization.github.io/docs/content/use-cases/home-automation.md)
-- [Cross-device notes](https://borganization.github.io/docs/content/use-cases/cross-device-notes.md)
+- [Developer copilot](https://docs.borganization.ai/content/use-cases/developer-copilot.md)
+- [Personal assistant](https://docs.borganization.ai/content/use-cases/personal-assistant.md)
+- [Research assistant](https://docs.borganization.ai/content/use-cases/research-assistant.md)
+- [Ops bot](https://docs.borganization.ai/content/use-cases/ops-bot.md)
+- [Home automation](https://docs.borganization.ai/content/use-cases/home-automation.md)
+- [Cross-device notes](https://docs.borganization.ai/content/use-cases/cross-device-notes.md)
 
 ## Optional
 
-- [Contributing](https://borganization.github.io/docs/content/contributing/index.md)
-- [Development setup](https://borganization.github.io/docs/content/contributing/development.md)
-- [Testing](https://borganization.github.io/docs/content/contributing/testing.md)
-- [Style](https://borganization.github.io/docs/content/contributing/style.md)
-- [Roadmap](https://borganization.github.io/docs/content/contributing/roadmap.md)
+- [Contributing](https://docs.borganization.ai/content/contributing/index.md)
+- [Development setup](https://docs.borganization.ai/content/contributing/development.md)
+- [Testing](https://docs.borganization.ai/content/contributing/testing.md)
+- [Style](https://docs.borganization.ai/content/contributing/style.md)
+- [Roadmap](https://docs.borganization.ai/content/contributing/roadmap.md)

@@ -11,7 +11,7 @@ const ROOT = join(__dirname, "..");
 const CONTENT = join(ROOT, "content");
 const OUT = join(ROOT, "assets", "manifest.json");
 const SITEMAP = join(ROOT, "sitemap.xml");
-const SITE_URL = "https://borganization.github.io/docs";
+const SITE_URL = "https://docs.borganization.ai";
 
 // Preferred display order for top-level sections. Anything not listed falls
 // through to alphabetical after these.
