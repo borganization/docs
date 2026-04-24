@@ -6,9 +6,9 @@ Borg evolves from how you use it. Like Pokemon, evolution is a permanent transfo
 
 1. **Stages** — three permanent tiers (Base → Evolved → Final)
 2. **Levels** — 0 to 99 within each stage
-3. **Archetypes** — 10 internal categories classifying your usage pattern
+3. **Archetypes** — 11 internal categories classifying your usage pattern
 
-Display format: `Pipeline Warden Lvl.42`.
+Display format: `Ops Borg Lvl.42`. Names follow the `<Archetype> Borg` pattern (Ops Borg, Builder Borg, Analyst Borg, Marketer Borg, Strategist Borg, Tinkerer Borg, Guardian Borg, and so on).
 
 ## Stages
 
@@ -53,7 +53,7 @@ XP events are rate-limited during replay: 15 total per hour, 5 per source, 3 cre
 
 ## Archetypes
 
-Ten internal categories. The LLM uses the dominant archetype to generate your agent's name, and aligned actions earn bonus XP.
+Eleven internal categories. The LLM uses the dominant archetype to generate your agent's name, and aligned actions earn bonus XP.
 
 | Archetype | Domain |
 |---|---|
@@ -61,6 +61,7 @@ Ten internal categories. The LLM uses the dominant archetype to generate your ag
 | Builder | Automation, coding, creation |
 | Analyst | Research, data, metrics |
 | Communicator | Outreach, messaging, email |
+| Marketer | Campaigns, growth, social, SEO |
 | Guardian | Security, compliance, monitoring |
 | Strategist | Planning, prioritization |
 | Creator | Content, writing, docs |
@@ -114,7 +115,7 @@ Evolution context injects into the system prompt each turn:
 
 ```
 <evolution_context>
-Stage: Evolved | Pipeline Warden Lvl.42
+Stage: Evolved | Ops Borg Lvl.42
 Archetype: Ops (score: 74)
 Autonomy: DraftAssist
 </evolution_context>

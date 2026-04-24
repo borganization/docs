@@ -65,7 +65,7 @@ Switch modes with `/mode`, or set a default in `/settings`. See [collaboration-m
 
 ## Evolution identity
 
-Once your agent reaches Stage 2, it earns a generated name like `Pipeline Warden` based on your usage archetype. The name sticks forever. Personality (tone, voice) stays under your control via IDENTITY.md. Evolution adds a layer, it does not overwrite your customization. See [evolution](evolution).
+Once your agent reaches Stage 2, it earns a name like `Ops Borg` based on your dominant usage archetype. The name sticks forever. Personality (tone, voice) stays under your control via IDENTITY.md. Evolution adds a layer, it does not overwrite your customization. See [evolution](evolution).
 
 ## Config
 
