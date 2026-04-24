@@ -44,7 +44,7 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
   white-space: nowrap;
 }
 #breadcrumbs .sep { color: #999; margin: 0 4px; }
-#breadcrumbs a { text-transform: uppercase; letter-spacing: 0.04em; }
+#breadcrumbs a { text-transform: capitalize; }
 #actions { font-size: 15px; }
 #actions a { margin-left: 12px; }
 
