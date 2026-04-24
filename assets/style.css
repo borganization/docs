@@ -44,6 +44,7 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
   white-space: nowrap;
 }
 #breadcrumbs .sep { color: #999; margin: 0 4px; }
+#breadcrumbs a { text-transform: uppercase; letter-spacing: 0.04em; }
 #actions { font-size: 15px; }
 #actions a { margin-left: 12px; }
 
@@ -128,8 +129,8 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
 }
 #doc-actions button {
   font-family: inherit;
-  font-size: 13px;
-  padding: 2px 8px;
+  font-size: 15px;
+  padding: 4px 12px;
   background: #f0f0f0;
   border: 1px solid #666;
   cursor: pointer;
@@ -203,7 +204,7 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
 #doc img { max-width: 100%; }
 
 #docfoot { margin-top: 40px; color: #666; }
-#docfoot small { font-size: 12px; }
+#docfoot small { font-size: 14px; line-height: 1.5; }
 
 @media (max-width: 720px) {
   #layout { grid-template-columns: 1fr; }

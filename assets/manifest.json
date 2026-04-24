@@ -30,11 +30,6 @@
         "children": []
       },
       {
-        "path": "concepts/borganism",
-        "title": "Borganism",
-        "children": []
-      },
-      {
         "path": "concepts/channels",
         "title": "Channels",
         "children": []
