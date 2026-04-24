@@ -46,6 +46,7 @@
   }
 
   function renderBreadcrumbs(path) {
+    if (!crumbsEl) return;
     crumbsEl.innerHTML = "";
     var home = document.createElement("a");
     home.href = BASE + "/";
