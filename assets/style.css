@@ -8,8 +8,8 @@ html, body {
   background: #ffffff;
   color: #000000;
   font-family: "Times New Roman", Times, serif;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 a { color: #0000ee; text-decoration: underline; }
@@ -30,18 +30,21 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
   font-weight: bold;
   text-decoration: none;
   color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 17px;
 }
 #topbar #title a:hover { background: transparent; text-decoration: underline; }
 #breadcrumbs {
   flex: 1;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 #breadcrumbs .sep { color: #999; margin: 0 4px; }
-#actions { font-size: 13px; }
+#actions { font-size: 15px; }
 #actions a { margin-left: 12px; }
 
 #layout {
@@ -61,8 +64,9 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
 }
 .pane-header {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: #555;
   padding: 4px 6px;
   border-bottom: 1px solid #ccc;
@@ -75,7 +79,7 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
   padding-left: 14px;
 }
 #tree { padding-left: 4px; }
-#tree li { margin: 0; padding: 0; font-size: 14px; }
+#tree li { margin: 0; padding: 0; font-size: 16px; }
 #tree .dir > .label,
 #tree .file {
   display: flex;
@@ -134,10 +138,27 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
 #doc-actions button.copied { background: #d0ffd0; }
 
 /* Markdown content */
-#doc h1 { font-size: 24px; border-bottom: 1px solid #999; padding-bottom: 4px; margin-top: 0; }
-#doc h2 { font-size: 19px; border-bottom: 1px solid #ccc; padding-bottom: 2px; margin-top: 24px; }
-#doc h3 { font-size: 16px; margin-top: 20px; }
-#doc h4 { font-size: 15px; margin-top: 16px; }
+#doc h1, #doc h2, #doc h3, #doc h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+#doc h1 {
+  font-size: 30px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#doc h2 {
+  font-size: 22px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  margin-top: 28px;
+  font-weight: bold;
+}
+#doc h3 { font-size: 18px; margin-top: 22px; font-weight: bold; }
+#doc h4 { font-size: 16px; margin-top: 18px; font-weight: bold; }
 #doc p { margin: 10px 0; }
 #doc ul, #doc ol { padding-left: 24px; }
 #doc li { margin: 3px 0; }
@@ -155,8 +176,9 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
   overflow-x: auto;
   font-size: 13px;
   line-height: 1.4;
+  font-family: "Courier New", Courier, monospace;
 }
-#doc pre code { background: transparent; border: 0; padding: 0; }
+#doc pre code { background: transparent; border: 0; padding: 0; font-size: 13px; }
 #doc blockquote {
   margin: 10px 0;
   padding: 4px 12px;
@@ -167,15 +189,17 @@ hr { border: 0; border-top: 1px solid #999; margin: 0; }
 #doc table {
   border-collapse: collapse;
   margin: 12px 0;
-  font-size: 14px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 780px;
 }
 #doc th, #doc td {
   border: 1px solid #666;
-  padding: 4px 8px;
+  padding: 6px 10px;
   text-align: left;
   vertical-align: top;
 }
-#doc th { background: #eee; }
+#doc th { background: #eee; font-weight: bold; }
 #doc img { max-width: 100%; }
 
 #docfoot { margin-top: 40px; color: #666; }
