@@ -17,6 +17,11 @@
         "path": "getting-started/providers",
         "title": "Providers",
         "children": []
+      },
+      {
+        "path": "getting-started/slash-commands",
+        "title": "Slash Commands",
+        "children": []
       }
     ]
   },
