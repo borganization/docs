@@ -12,6 +12,12 @@ A daily maintenance task keeps the system healthy with no human intervention. It
 
 `task_type = 'maintenance'`. The dispatcher runs daily maintenance directly, no LLM call.
 
+## On-demand sweep
+
+`/heal` runs the full sweep immediately — same code path, same `doctor_runs` row written. Use when you don't want to wait for 02:00.
+
+`/doctor` is read-only diagnostics. `/heal` is `/doctor` plus the mutating housekeeping steps (log truncation, activity pruning, embedding eviction, workflow pruning, stalled-task recovery).
+
 ## Stall detection
 
 The daemon scans every 5 minutes for scheduled tasks whose `next_run` drifted more than `STALLED_TASK_GRACE_SECS` (1 hour) into the past. Stalled tasks get `task_runs.status = 'missed'`. Their `next_run` resets.

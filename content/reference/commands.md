@@ -35,6 +35,14 @@ Slash commands drive everything: settings, models, scheduling, status, memory, p
 | `/stats` | [Vitals](../borganism/vitals): stability, focus, sync, growth, happiness |
 | `/card` | Print a shareable ASCII card of your Borg |
 
+## Maintenance
+
+| Command | Use |
+|---|---|
+| `/doctor` | Run diagnostics on Borg and host environment |
+| `/heal` | Run the full [self-healing](../concepts/self-healing) maintenance sweep on demand |
+| `/update` | Update Borg to the latest release |
+
 ## Utilities
 
 | Command | Use |
